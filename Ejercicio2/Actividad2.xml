@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="	estilo.css"?>
+<catalog>
+   <book>
+       <title>Clean Code</title>
+       <author>Robert C. Martin</author>
+       <year>2008</year>
+       <publisher>Prentice Hall</publisher>
+   </book>
+   <!-- Agrega al menos tres libros más siguiendo este formato -->
+   <book>
+       <title>Do Androids Dream of Electric Sheep?</title>
+       <author>Philip K. Dick</author>
+       <year>1968</year>
+       <publisher>Edhasa</publisher>
+   </book>
+   <book>
+       <title>Metro 2033</title>
+       <author>Dmitri Glujovski</author>
+       <year>2005</year>
+       <publisher>Timunmas</publisher>
+   </book>
+   <book>
+       <title>The Call of Cthulhu</title>
+       <author>H. P. Lovecraft</author>
+       <year>1928</year>
+       <publisher>Pulp Weird Tales</publisher>
+   </book>       
+</catalog>

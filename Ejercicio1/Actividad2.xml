@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Diseñar un documento válido en XML que permita estructurar la información de una agenda de teléfonos, suponer que la información que podemos tener de una persona es su nombre y apellidos, su dirección y sus teléfonos, que pueden ser el teléfono de casa, el móvil y el teléfono del trabajo. -->
+
+<agendaTelefono>
+	<persona>
+		<nombre>Adri</nombre>
+		<apellidos>Garcia Garcia</apellidos>
+		<direccion>Calle Perno, 3</direccion>
+		<telefonos>
+			<movil>64646464</movil>
+			<casa>919191919</casa>
+			<trabajo>61616161</trabajo>
+		</telefonos>
+	</persona>
+</agendaTelefono>
