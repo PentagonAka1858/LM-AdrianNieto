@@ -7,14 +7,14 @@ catalog {
 }
 book {
 	border: 1px solid #ccc;
-	text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 	margin-bottom: 15px;
 	padding: 15px;
 	border-radius: 8px;
 	background: #fff;
 }
 title {
-	font-style: bold;
+	font-weight: bold;
 	font-size: 20px;
 	color: #007bff;
 }
