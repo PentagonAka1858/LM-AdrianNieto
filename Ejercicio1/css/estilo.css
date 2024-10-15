@@ -1,0 +1,47 @@
+cicloDAM {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+asignatura {
+    margin-bottom: 20px;
+}
+
+asignatura > nombre {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+}
+
+duracion {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+alumnado {
+    margin-top: 15px;
+    display: flex;
+}
+
+alumno {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+alumno > nombre {
+    font-weight: bold;
+    color: #0066cc;
+}
+
+nif, telefono, email, direccion, notas, faltas {
+    display: block;
+    margin: 3px 0;
+    color: #666;
+}
+
+/* Ocultar elementos vacíos */
+nota:empty, faltas:empty {
+    display: none;
+}

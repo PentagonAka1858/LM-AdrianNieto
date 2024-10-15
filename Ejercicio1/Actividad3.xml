@@ -13,14 +13,53 @@
 				<unidadSI>kilogramo</unidadSI>
 			</ingrediente>
 			<ingrediente>
-				<nombre>Carne</nombre>
+				<nombre>Caldo de carne</nombre>
 				<cantidad>2</cantidad>
 				<unidadSI>litros</unidadSI>
 			</ingrediente>
+			<ingrediente>
+				<nombre>Mantequilla</nombre>
+				<cantidad>100</cantidad>
+				<unidadSI>gramos</unidadSI>
+			</ingrediente>
+			<ingrediente>
+				<nombre>Harina</nombre>
+				<cantidad>1</cantidad>
+				<unidadSI>cucharada</unidadSI>
+			</ingrediente>
+			<ingrediente>
+				<nombre>Queso emmental suizo o gruyére rallado</nombre>
+				<cantidad>100</cantidad>
+				<unidadSI>gramos</unidadSI>
+			</ingrediente>
+			<ingrediente>
+				<nombre>Pan tostado en rebanadas</nombre>
+				<cantidad>al gusto</cantidad>
+				<unidadSI></unidadSI>
+			</ingrediente>
+			<ingrediente>
+				<nombre>Tomillo</nombre>
+				<cantidad>al gusto</cantidad>
+				<unidadSI></unidadSI>
+			</ingrediente>
+			<ingrediente>
+				<nombre>Laurel</nombre>
+				<cantidad>1</cantidad>
+				<unidadSI>hoja</unidadSI>
+			</ingrediente>
+			<ingrediente>
+				<nombre>Pimienta</nombre>
+				<cantidad>al gusto</cantidad>
+				<unidadSI></unidadSI>
+			</ingrediente>															
 		</ingredientes>
 		<proceso>
-			<paso>Pelar y repartir</paso>
-			<paso>Rehogarlas</paso>
+			<paso>Pelar y partir las cebollas en rodajas finas.</paso>
+			<paso>Rehogarlas con la mantequilla, sal y pimienta a fuego lento hasta que estén transparentes sin dorarse.</paso>
+			<paso>Añadir la harina sin dejar de remover.</paso>
+			<paso>Ponerlo en una cazuela con el caldo, el tomillo y el laurel.</paso>
+			<paso>Dejar cocer a fuego lento durante unos 15 minutos.</paso>
+			<paso>Poner las rebanas de pan encima, espolvorear el queso y gratinar al horno.</paso>
 		</proceso>
 	</receta>
 </recetas>

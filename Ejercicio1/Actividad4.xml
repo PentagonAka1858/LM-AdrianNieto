@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?xml-stylesheet type="text/css" href="./css/estilo.css"?>
 <!-- https://marcosruiz.github.io/posts/tarea-introduccion-xml/#actividad-4 -->
 
 <cicloDAM>
-	
+	<asignatura>
+		<nombre>Lenguajes de Marcas y Sistemas de Gestión de Información</nombre>
+		<horas unidad="semanales">4</horas>
+		<duracion>
+			<fechaInicial>
+				<dia>15</dia>
+				<mes>septiembre</mes>
+				<año>2010</año>
+			</fechaInicial>
+			<fechaFinal>
+				<dia>30</dia>
+				<mes>junio</mes>
+				<año>2011</año>				
+			</fechaFinal>
+		</duracion>
+		<alumnado>
+			<alumno>
+				<nombre>Ana Fernández Gutiérrez</nombre>
+				<nif>16965696L</nif>
+				<telefono>789654321</telefono>
+				<email>ana.fdezgtrrez@hotmail.com</email>
+				<direccion>C/ El Percebe, 13 de Santander CP 39302</direccion>
+				<notas>
+					<nota></nota>
+				</notas>
+				<faltas></faltas>
+			</alumno>
+			<alumno>
+				<nombre>Pepito Grillo</nombre>
+				<nif>98765432H</nif>
+				<telefono>656566555</telefono>
+				<email>yhyh@yahoo.com</email>
+				<direccion>Avd. El Pez, 5 de Suances CP 39401</direccion>
+				<notas>
+					<nota>apto</nota>
+				</notas>
+				<faltas>0</faltas>
+			</alumno>
+		</alumnado>
+	</asignatura>
 </cicloDAM>
