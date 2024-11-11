@@ -6,10 +6,7 @@
     padding: 8px;
     font-family: courier new;
     width: 750px;
-    margin-top: 60px;
-    margin-bottom: auto;
-    margin-right: auto;
-    margin-left: auto;
+    margin: auto;
     transition: transform .3s, box-shadow 0.5s, text-shadow 0.7s;
 }
 
