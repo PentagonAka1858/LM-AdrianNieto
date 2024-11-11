@@ -1,0 +1,237 @@
+
+.info{
+    text-align: center;
+    background-color: #000;
+    border: 1px solid #000;
+    color: #00ff00;
+    padding: 8px;
+    font-family: courier new;
+    width: 750px;
+    margin: auto;
+    transition: transform .3s, box-shadow 0.5s, text-shadow 0.7s;
+}
+
+#texto{
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: escritura 2.5s steps(40, end);
+}
+
+.info:hover{
+    box-shadow: 0px 0px 32px 0px #00ff00;
+    transform: rotate(1deg) scale(1.1);
+    text-shadow: 0px 0px 16px #00ff00;
+}
+
+.indice{
+    display:flexbox;
+    width: 50%;
+    height: 40px;
+    text-align: center;
+    margin: auto;
+}
+
+hr{
+    color:#00ff00;
+}
+
+.carpeta{
+    color: rgb(208, 255, 208);
+    font-weight: bold;
+}
+
+li{
+    color: white;
+    font-size: 16px;
+}
+
+a{
+    color: white;
+}
+
+a:link{
+    color:#27fc91;
+}
+a:visited{
+    color:#8cc991;
+}
+a:hover{
+    color:#dbffd0;
+}
+
+.contenedor {
+    width: 450px;
+    height: 150px auto;
+    overflow: auto; 
+    margin: 0 auto; 
+    transition: transform .3s, box-shadow .3s;
+}
+
+#contenedor1:hover{
+box-shadow: 0px 0px 32px 0px #639763;
+transform: rotate(-2deg) scale(1.1);
+}
+
+#contenedor2:hover{
+    box-shadow: 0px 0px 32px 0px #639763;
+    transform: rotate(2deg) scale(1.1);
+    }
+
+div.temas{
+    margin-top: 50px;
+    column-count: 2;
+    display: flex;
+}
+
+.terminal_barraherramientas {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    padding: 0 8px;
+    box-sizing: border-box;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #212121;
+    justify-content: space-between;
+}
+
+.botones {
+    display: flex;
+    align-items: center;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-right: 5px;
+    font-size: 8px;
+    height: 12px;
+    width: 12px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 100%;
+    background: linear-gradient(#7d7871 0%, #595953 100%);
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 1px 0px #41403A, 0px 1px 1px 0px #474642;
+}
+
+.boton-color {
+    background: #ee411a;
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.boton:focus {
+    outline: none;
+}
+
+.botones--exit {
+    background: linear-gradient(#f37458 0%, #de4c12 100%);
+}
+
+.anadir_pestana {
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0 6px;
+    border-radius: 4px 4px 0 0;
+    border-bottom: none;
+    cursor: pointer;
+}
+
+.usuario {
+    color: #d5d0ce;
+    margin-left: 6px;
+    font-size: 14px;
+    line-height: 15px;
+}
+
+.terminal_body {
+    background: rgb(34, 34, 34);
+    height: calc(100% - 30px);
+    padding-top: 2px;
+    margin-top: -1px;
+    font-size: 12px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.terminal_promt {
+    display: flex;
+}
+
+.terminal_promt span {
+    margin-left: 4px;
+}
+
+.terminal_usuario {
+    color: #1eff8e;
+    font-size: 14px;
+}
+
+.terminal_directorio {
+    color: #4878c0;
+    font-size: 14px;
+}
+
+.terminal_comando {
+    color: #dddddd;
+    font-size: 14px;
+}
+
+.terminal_cursor {
+    display: block;
+    height: 14px;
+    width: 1px;
+    margin-left: 10px;
+    animation: cursorBloque 0.7s linear infinite;
+}
+
+@keyframes cursorBloque {
+    0% {
+        background: #ffffff;
+    }
+    49% {
+        background: #ffffff;
+    }
+    60% {
+        background: transparent;
+    }
+    99% {
+        background: transparent;
+    }
+    100% {
+        background: #ffffff;
+    }
+}
+
+
+body {
+    background: linear-gradient(29deg, #000000 0%, #000000 28%, #005e0c 63%, #000000 92%);
+    background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+    font-family: Lucida Console, monospace;
+    margin: 0;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes escritura {
+    from { width: 0 }
+    to { width: 100% }
+}
