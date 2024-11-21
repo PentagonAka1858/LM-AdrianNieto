@@ -48,9 +48,36 @@
                     <input type="checkbox" name="filmGenre" value="drama">Drama
                     <input type="checkbox" name="filmGenre" value="romance">Romance
                     <input type="checkbox" name="filmGenre" value="oldwest">Oeste<br>
-
                     <br><br>
-                    <center><input type="submit" value="Enviar"></center>
+                    ¿Qué mes es tu favorito?
+                    <select name="fechaNacimiento">
+                        <option value="enero">Enero</option>
+                        <option value="febrero">Febrero</option>
+                        <option value="marzo">Marzo</option>
+                        <option value="abril">Abril</option>
+                        <option value="mayo">Mayo</option>
+                        <option value="junio">Junio</option>
+                        <option value="julio">Julio</option>
+                        <option value="agosto">Agosto</option>
+                        <option value="septiembre">Septiembre</option>
+                        <option value="octubre">Octubre</option>
+                        <option value="noviembre">Noviembre</option>
+                        <option value="diciembre">Diciembre</option>
+                    </select>
+                    <hr>
+                    <center>
+                        <input type="submit" value="Enviar" name="datos"> 
+                        <input type="reset" value="Reinicio">
+                    </center><br>
+                    <center>
+                        <input type="button" value="Cerrar ventana" onclick="window.close();">
+                        <input type="button" value="Cargar nueva ventana" onclick="window.open('formulario.html');">
+                        <input type="button" value="Alerta" onclick="alert('Pulsaste la alerta')">
+                        <input type="button" value="Pon el raton encima" onmouseenter="alert('Entraste en el buton')">
+                        <input type="button" value="Haz doble click" ondblclick="alert('Hiciste doble click')">
+                        <input type="button" value="¿Que hora es?" onclick="document.getElementById('hora').innerHTML = Date();"><p id="hora">Pulsa el botón de hora</p>
+                        <input type="button" value="Hora alerta" onclick="alert(Date());"
+                    </center>
                 </p>
             </form>
         </td>
