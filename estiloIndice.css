@@ -7,7 +7,7 @@
     font-family: courier new;
     width: 750px;
     margin: auto;
-    transition: transform .3s, box-shadow 0.5s, text-shadow 0.7s;
+    transition: box-shadow 0.5s, text-shadow 0.7s;
 }
 
 #texto{
@@ -19,7 +19,6 @@
 
 .info:hover{
     box-shadow: 0px 0px 32px 0px #00ff00;
-    transform: rotate(1deg) scale(1.1);
     text-shadow: 0px 0px 16px #00ff00;
 }
 
@@ -212,25 +211,32 @@ div.temas{
 body {
     background: linear-gradient(29deg, #000000 0%, #000000 28%, #005e0c 63%, #000000 92%);
     background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
 	height: 100vh;
     font-family: Lucida Console, monospace;
     margin: 0;
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
 @keyframes escritura {
     from { width: 0 }
     to { width: 100% }
+}
+
+header{
+    
+}
+
+footer{
+    background-color: #000;
+    color: #00ff00;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: larger;
+    padding: 5px;
+    transition: text-shadow 0.7s;}
+
+footer:hover{
+    text-shadow: 0px 0px 16px #00ff00;
 }
