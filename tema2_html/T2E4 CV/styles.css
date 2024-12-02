@@ -1,3 +1,8 @@
+:root{
+    --main-width: 900px;
+    --main-bg-color: #01497C;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,26 +12,24 @@ body {
 }
 
 header {
-    background-color: #0d3b66;
+    background-color: var(--main-bg-color);
     color: #ffffff;
     display: flex;
     align-items: center;
-    border-bottom: 4px solid #387cbb;
     text-align: center;
     justify-content: space-between;
     margin: auto;
-    width: 900px;
+    max-width: var(--main-width);
 }
 .cv-container {
     display: flex;
-    max-width: 900px;
+    max-width: var(--main-width);
     margin: 0px auto;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    background-color: #fff;
+    background-color: var(--main-bg-color);
 }
 
 .sidebar {
-    background-color: #0d3b66;
+    background-color: var(--main-bg-color);
     color: #fff;
     padding: 20px;
     width: 30%;
@@ -51,23 +54,40 @@ header {
     font-weight: 300;
 }
 
+.job-title{
+    margin-right: 10px;
+}
+
 .contact-info, .additional-info {
     margin-top: 20px;
 }
 
 .main-content {
+    background-color: #fff;
     padding: 20px;
     width: 70%;
+    border-top-left-radius: 8%;
 }
 
 .section {
     margin-bottom: 20px;
 }
 
+.formacion{
+    font-weight: bold;
+    font-size: 1.1em;
+    color:#ffffff
+}
+
+.fecha{
+    color: #cfcfcf;
+}
+
 h2 {
     color: #0d3b66;
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 aside > section > h2 {
@@ -77,19 +97,19 @@ aside > section > h2 {
 }
 
 footer {
-    background-color: #387cbb;
+    background-color: #468FAF;
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: auto;
-    width: 900px;
+    max-width: var(--main-width);
     text-align: center;
     box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
 }
 
 .contact-info {
-    padding: 20px;
+    padding: 5px;
     border-radius: 8px;
     margin: 0 auto;
     max-width: 600px;
@@ -110,4 +130,12 @@ ul li {
 .experience h3 {
     margin: 10px 0;
     font-size: 18px;
+}
+
+a, a:link, a:visited{
+    color: #c2f3ff;
+}
+
+a:hover, a:active{
+    color: #fff;
 }
