@@ -1,0 +1,247 @@
+/* FUENTE BASE DE LA PAGINA */
+*{
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    /* INTERLIADO */
+}
+
+/* ARTICULO */
+
+.articulo h1{
+    color:  #CC6600;
+    font-size: 1.6em;
+    /* INTERLIADO */
+    margin-bottom: 0.3em;
+}
+
+/* MENU */
+
+#menu {
+    font-size: 1.3em;
+    background-color: rgb(51, 51, 214);
+}
+
+#menu a {
+    margin-right: 1em;
+    color: white;
+}
+
+/* LATERAL */
+
+#lateral {
+    font-size: 0.9em;
+}
+
+#noticias p{
+    color: #999;
+    margin:auto;
+}
+
+#noticias {
+    color: #003366;
+}
+
+#noticias h1 {
+    font-size: 1.1em;
+    margin-top:0.3em;
+    margin-bottom: 0.1em;
+}
+
+#noticias a {
+    color: blue;
+}
+
+/* PUBLICIDAD */
+
+#publicidad p {
+    color: #555;
+}
+
+#publicidad a {
+    color: #CC6600;
+}
+
+#publicidad h1 {
+    font-size: 1.1em;
+    margin-top:0.3em;
+    margin-bottom: 0.1em;
+}
+
+/* ENLACES ARTICULO */
+
+.articulo a {
+    color: #CC6600;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+/* ENLACES RELACIONADOS */
+
+#enlaces > div{
+    display:grid;
+}
+
+#enlaces a {
+    color: blue;
+}
+
+#enlaces h1 {
+    font-size: 1.1em;
+    margin: 0.3px 0.3px 0.3px 0.3px;
+}
+
+/* ASIDE DERECHO */
+
+main > aside > div {
+    h1 {
+        background-color: #CC6600;
+        color: white;
+        font-size: 1em;
+        padding: 3px;
+        border-radius: 5%;
+    }
+    a {
+        color: blue;
+    }
+}
+
+/* BORDER Y RELLENO */
+
+#superior {
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+    border:1px solid #555;
+    background-color: #eeeeee;
+    padding: 3px;
+}
+
+#publicidad {
+    border:1px solid #CC6600;
+    background-color: #ffe5cc;
+    padding: 3px;
+}
+
+main > aside {
+    border:1px solid #555;
+    background-color: #eeeeee;
+    padding: 3px;
+}
+
+/* TODO LO DE ABAJO ES PARA CENTRAR TABLAS Y TAMAÑOS */
+
+body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+    height: 100%;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+header p {
+    align-self: center;
+    margin-left: auto;
+    padding: 5px;
+}
+header h1 {
+    padding-left: 5px;
+    align-self: center;
+    color:#CC6600;
+    font-size: large;
+}
+
+
+
+/* NAV */
+
+nav {
+    width: 600px;
+}
+
+
+/* MAIN Y ASIDE */
+
+#principal {
+    display:flex;
+    width: 600px;
+    margin:0;
+}
+
+#lateral {
+    width: 17%;
+}
+
+main {
+    padding-left: 5px;
+    display: flex;
+    gap: 10px;
+    min-width: 85%;
+    max-width: 85%;
+}
+
+img {
+    float:left;
+    width: 55px;
+    margin-right: 0.5em;
+}
+
+main > aside {
+    padding: 3px;
+    min-width: 20%;
+    max-width: 20%;
+}
+
+main > section > div {
+    margin-bottom: 20px;
+    clear: both;
+}
+
+/* TABLA */
+
+table {
+    margin: auto;
+    width: 85%;
+}
+
+
+/* FOOTER */
+
+footer {
+    margin-top: 0.5em;
+    width: 600px;
+    font-size: 0.7em;
+    display: flex;
+    background-color: #e7e7e7;
+    color: #777777;
+}
+
+footer a {
+    color: blue;
+    font-weight: bold;
+    align-content: center;
+    font-size: 0.7em;
+    align-items: center;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    margin-right: 0.4em;
+    margin-left: 0.4em;
+}
+
+footer p {
+    align-content: center;
+    margin-left: auto;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    color: #555;
+    font-size: 0.5em;
+}
+
