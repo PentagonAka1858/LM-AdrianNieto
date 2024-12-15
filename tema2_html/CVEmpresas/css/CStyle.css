@@ -1,7 +1,7 @@
 /* ELIMINAR BARRA SCROLL LATERAL */
-html{
+/*html{
     scrollbar-width: none;
-}
+}*/ /* COMENTADO POR ACCESIBILIDAD (PERSONAS QUE NO PUEDAN USAR RUEDA DEL RATON / TOUCHPAD) */
 
 /* VARIABLES */
 :root{
