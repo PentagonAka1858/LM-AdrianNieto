@@ -1,0 +1,162 @@
+/* ELIMINAR BARRA SCROLL LATERAL */
+html{
+    scrollbar-width: none;
+}
+
+/* VARIABLES */
+:root{
+    --main-light-color: #f7e9e9;
+    --main-light-color-2: #8445bc;
+    --main-light-text: #20134b;
+    --main-light-text-2: #f7e9e9;
+}
+
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/* PARA PORTATILES Y SOBREMESAS */
+/*@media only screen and (min-width: 992px){*/ /* CUANDO SE COMPLETE PARA MOVILES ELIMINAR COMENTARIO */
+    body{
+        background-color: #E8E9EA;
+    }
+
+    .cv{ /* CURRICULUM */
+        margin: auto;
+        max-width: 842px;
+        background-color: var(--main-light-color-2);
+        border-radius: 20px 20px 40px 40px;
+    }
+
+    .header, .header a{ /* CONTACTO */
+        display: flex;
+        align-items: center;
+        color: var(--main-light-text-2);
+        text-decoration: none;
+    }
+    /* DENTRO DE CABECERA */
+
+    .nombre{
+        width: 40%;
+        text-align: center;
+        padding: 10px;
+        h1{
+            margin-bottom: 2px;
+        }
+        p{
+            margin-top: 2px;
+        }
+    }
+    .imagen{
+        text-align: center;
+        width: 20%;
+    }
+    .contacto{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        ul{
+            list-style: none;
+            text-decoration: underline;
+            margin: 8px 0px 0px 0px;
+            width: fit-content;
+        }
+    }
+    #yo{ /*IMAGEN DE MI*/
+        border-radius: 30%;
+        width: 20vw;
+        max-width: 120px;
+        border: 5px solid var(--main-light-color);
+        height: auto;
+    }
+
+    /* FIN CABECERA */
+
+    .main{ /* DATOS IMPORTANTES */
+        background-color: var(--main-light-color);
+        border-radius: 0px 0px 20px 20px;
+        display: flex;
+    }
+
+    h2{
+        font-family: "Archivo Black", sans-serif;
+        font-size: 21px;
+        letter-spacing: 2px;
+        color: var(--main-light-text);
+        margin: 5px 0px 10px 0px;
+        border-bottom: 2px solid var(--main-light-text);
+        width: 100%;
+    }
+    h3{
+        font-family: "Ubuntu Bold", sans-serif;
+        color: var(--main-light-text);
+        margin: 0px;
+    }
+    .bigicons{ /* ICONOS GRANDES */
+        max-width: 30px;
+        margin: 0px 5px 5px 0px;
+        vertical-align: middle;
+    }
+    .smallicon{ /* ICONOS PEQUEÑOS */
+        max-width: 15px;
+        margin-right: 5px;
+        vertical-align: middle;
+        margin-bottom: 6px;
+    }
+
+    /* FECHA LUGAR */
+    .fechalugar{
+        display: flex;
+        p{
+            margin-right: 20px;
+            margin-left: 20px;
+            margin: 0px 20px 0px 20px;
+        }
+    }
+
+    .noacademico, .estudios{ /* DATOS DE LAS OTRAS CARRERAS */
+        width: 48%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /*.noacademico{
+        border-right: 3px dotted #8445bc9e;
+    }*/
+    .vl{
+        width: 0px;
+        height:450px;
+        margin: auto 0 auto 0;
+        border: 2px solid #8445bc80;
+        border-radius: 5000px;
+    }
+    /* NO ACADEMICO DENTRO */
+    .sobremi{
+        margin: 15px 0px 15px 0px;
+        p{
+            color: var(--main-light-text);
+            margin-top:0px;
+            text-align: justify;
+        }
+    }
+    .experiencia{
+        margin: 15px 0px 15px 0px;
+        
+        .titulo{
+            margin: 5px 0px 5px 0px;
+        }
+        .extrainfo, ul{
+            margin: 5px 0px 5px 0px;
+        }
+        ul{
+            padding-left: 20px;
+        }
+    }
+/*}*/  /* CUANDO SE COMPLETE PARA MOVILES ELIMINAR COMENTARIO */
+
+
+/* PARA MÓVILES */
+/*@media only screen and (max-width: 600px){
+
+}*/
