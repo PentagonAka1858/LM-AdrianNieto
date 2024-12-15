@@ -24,9 +24,12 @@ html{
 
     .cv{ /* CURRICULUM */
         margin: auto;
-        max-width: 842px;
+        max-width: 942px;
         background-color: var(--main-light-color-2);
         border-radius: 20px 20px 40px 40px;
+    }
+    .header{
+        padding: 10px 0px 10px 0px;
     }
 
     .header, .header a{ /* CONTACTO */
@@ -61,6 +64,9 @@ html{
             text-decoration: underline;
             margin: 8px 0px 0px 0px;
             width: fit-content;
+            li{
+                display: flex;
+            }
         }
     }
     #yo{ /*IMAGEN DE MI*/
@@ -77,6 +83,7 @@ html{
         background-color: var(--main-light-color);
         border-radius: 0px 0px 20px 20px;
         display: flex;
+        padding: 10px 0px 10px 0px;
     }
 
     h2{
@@ -93,16 +100,32 @@ html{
         color: var(--main-light-text);
         margin: 0px;
     }
+    #libro{ /* ICONO DEL LIBRO DEMASIADO GRANDE */
+        max-width: 20px;
+    }
     .bigicons{ /* ICONOS GRANDES */
         max-width: 30px;
         margin: 0px 5px 5px 0px;
         vertical-align: middle;
+        
     }
     .smallicon{ /* ICONOS PEQUEÑOS */
         max-width: 15px;
         margin-right: 5px;
         vertical-align: middle;
         margin-bottom: 6px;
+    }
+    .contacticon{ /* ICONOS DE CONTACTO */
+        width: 18px;
+        margin-right: 10px;
+    }
+    .negrita{
+        font-family: "Ubuntu Bold", sans-serif;
+        font-weight: bold;
+        color: var(--main-light-text);
+    }
+    .completo{ /* PARRAFOS CON FECHAS Y LUGAR */
+        margin: 10px 0px 15px 0px;
     }
 
     /* FECHA LUGAR */
@@ -111,7 +134,7 @@ html{
         p{
             margin-right: 20px;
             margin-left: 20px;
-            margin: 0px 20px 0px 20px;
+            margin: 0px 20px -7px 20px;
         }
     }
 
@@ -126,7 +149,7 @@ html{
     }*/
     .vl{
         width: 0px;
-        height:450px;
+        height: 870px;
         margin: auto 0 auto 0;
         border: 2px solid #8445bc80;
         border-radius: 5000px;
@@ -151,6 +174,23 @@ html{
         }
         ul{
             padding-left: 20px;
+        }
+    }
+    .habilidades{
+        .habilidad{
+            margin: 10px 0px 10px 0px;
+        }
+    }
+
+    /* ESTUDIOS */
+    .academicos{
+        margin: 15px 0px 15px 0px;
+        
+        .titulo{
+            margin: 5px 0px 5px 0px;
+        }
+        .extrainfo, ul{
+            margin: 5px 0px 5px 0px;
         }
     }
 /*}*/  /* CUANDO SE COMPLETE PARA MOVILES ELIMINAR COMENTARIO */
