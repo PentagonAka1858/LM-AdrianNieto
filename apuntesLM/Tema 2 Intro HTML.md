@@ -83,3 +83,145 @@ ___
 
 ## 1.3 Etiquetas para formateo de texto
 
+___
+
+## ANEXO 1 - Juegos CSS
+
+### 1.1 CSS Diner
+
+```css
+/* Ejercicio 1 */
+plate {/*STYLE*/}
+
+/* Ejercicio 2 */
+bento {/*STYLE*/}
+
+/* Ejercicio 3 */
+#fancy {/*STYLE*/}
+
+/* Ejercicio 4 */
+plate apple {/*STYLE*/}
+
+/* Ejercicio 5 */
+#fancy pickle {/*STYLE*/}
+
+/* Ejercicio 6 */
+.small {/*STYLE*/}
+
+/* Ejercicio 7 */
+orange.small {/*STYLE*/}
+
+/* Ejercicio 8 */
+bento orange.small {/*STYLE*/}
+
+/* Ejercicio 9 */
+plate, bento {/*STYLE*/}
+
+/* Ejercicio 10 */
+* {/*STYLE*/}
+
+/* Ejercicio 11 */
+plate * {/*STYLE*/}
+
+/* Ejercicio 12 */
+plate + apple {/*STYLE*/}
+
+/* Ejercicio 13 */
+bento ~ pickle {/*STYLE*/}
+
+/* Ejercicio 14 */
+plate > apple {/*STYLE*/}
+
+/* Ejercicio 15 */
+orange:first-child {/*STYLE*/}
+
+/* Ejercicio 16 */
+plate :only-child {/*STYLE*/}
+
+/* Ejercicio 17 */
+.small:last-child {/*STYLE*/}
+
+/* Ejercicio 18 */
+:nth-child(3) {/*STYLE*/}
+
+/* Ejercicio 19 */
+bento:nth-last-child(3) {/*STYLE*/}
+
+/* Ejercicio 20 */
+apple:first-of-type {/*STYLE*/}
+
+/* Ejercicio 21 */
+:nth-of-type(even) {/*STYLE*/}
+
+/* Ejercicio 22 */
+plate:nth-of-type(2n+3) {/*STYLE*/}
+
+/* Ejercicio 23 */
+.small:only-of-type {/*STYLE*/}
+
+/* Ejercicio 24 */
+:not(pickle):last-of-type {/*STYLE*/}
+
+/* Ejercicio 25 */
+bento:empty {/*STYLE*/}
+
+/* Ejercicio 26 */
+apple:not(.small) {/*STYLE*/}
+
+/* Ejercicio 27 */
+[for] {/*STYLE*/}
+
+/* Ejercicio 28 */
+plate[for] {/*STYLE*/}
+
+/* Ejercicio 29 */
+[for="Vitaly"] {/*STYLE*/}
+
+/* Ejercicio 30 */
+[for^="Sa"] {/*STYLE*/}
+
+/* Ejercicio 31 */
+[for$="ato"] {/*STYLE*/}
+
+/* Ejercicio 32 */
+[for*=obb] {/*STYLE*/}
+```
+
+___
+
+### 1.2 CSS Speedrun
+
+```css
+/* Ejercicio 0 */
+li:first-child {/*STYLE*/}
+
+/* Ejercicio 1 */
+p:not(.foo) {/*STYLE*/}
+
+/* Ejercicio 2 */
+li:nth-of-type(2n+3) {/*STYLE*/}
+
+/* Ejercicio 3 */
+div > * {/*STYLE*/}
+
+/* Ejercicio 4 */
+[data-item] {/*STYLE*/}
+
+/* Ejercicio 5 */
+p ~ span {/*STYLE*/}
+
+/* Ejercicio 6 */
+form > :not([disabled]) {/*STYLE*/}
+
+/* Ejercicio 7 */
+#one, #two, #five, #six, #nine {/*STYLE*/}
+
+/* Ejercicio 8 */
+a + span {/*STYLE*/}
+
+/* Ejercicio 9 */
+#foo > .foo {/*STYLE*/}
+
+/* Ejercicio 10 */
+div > div span + code:not(.foo) {/*STYLE*/}
+```
