@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ARCHIVO DE CSS PARA CONFIGURAR EL FLEXBOX */
+        .container {
+            padding: 20px;
+            height: 100vh;
+            background-color: #eeeeee;
+            
+            /* Centrar el texto */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            /*  Con gap:5px; añadimos separación entre los elementos
+                Además podemos usar row-gap: 5px; para añadir separación entre los elementos de las filas
+                y column-gap: 5px; para añadir separación entre los elementos de las columnas
+                También está el acortado gap: (valor de row-gap)px (valor de column-gap)px;
+            */
+            gap: 5px;
+            
+            flex-direction:row;
+        }
+
+        .item {
+            height: 100px;
+            width: 200px;
+            background: #fb6942;
+            border-radius: 1rem;
+            color: #fff;
+        
+            /* Centrar el texto */
+            display: flex;
+            
+            /*  Con flex-grow:1; ajustamos el tamaño que crecerá el tamaño de la caja flex
+                Con flex-shrink:1; ajustamos el tamaño que llega a encogerse
+                Con flex-basis:auto; define el tamaño predeterminado
+             */
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: auto;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        Vamos a aprender a usar flexbox. El Archivo CSS se suele usar
+        en distinto archivo al HTML, pero por comodidad de aprendizaje
+        lo usaré con la etiqueta <style></style> en este mismo HTML.
+        
+        
+    -->
+    <div class="container">
+        <div class="item">Adri</div>
+        <div class="item">Adri</div>
+        <div class="item">Adri</div>
+    </div>
+    <div class="container">
+        <div class="item">Adri</div>
+    </div>
+</body>
+</html>

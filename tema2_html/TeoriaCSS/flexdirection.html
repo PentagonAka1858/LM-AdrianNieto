@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ARCHIVO DE CSS PARA CONFIGURAR EL FLEXBOX */
+        .container {
+            padding: 20px;
+            height: 100vh;
+            background-color: #eeeeee;
+            
+            /* Centrar el texto */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            
+            /* Con esto podremos cambiar la dirección del flex */
+            /* Con flex-direction:column; se mostrarán como columna (de arriba a abajo) */
+            /* Con flex-direction:row; se mostrará como fila (de izquierda a derecha) */
+            flex-direction:column;
+        }
+
+        .item {
+            height: 100px;
+            width: 200px;
+            background: #fb6942;
+            border-radius: 1rem;
+            color: #fff;
+        
+            /* Centrar el texto */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        Vamos a aprender a usar flexbox. El Archivo CSS se suele usar
+        en distinto archivo al HTML, pero por comodidad de aprendizaje
+        lo usaré con la etiqueta <style></style> en este mismo HTML.
+    -->
+    <div class="container">
+        <div class="item">Adri</div>
+        <div class="item">Adri</div>
+        <div class="item">Adri</div>
+    </div>
+</body>
+</html>
