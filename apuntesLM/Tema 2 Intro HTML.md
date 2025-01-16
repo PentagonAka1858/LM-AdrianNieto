@@ -83,7 +83,39 @@ ___
 
 ## 1.3 Etiquetas para formateo de texto
 
-___
+
+---
+
+## 1.8 Frames
+
+Los frames o marcos permiten dividir un documento en varias zonas, de forma que cada una de estas sea a su vez otro documento HTML. Se declaran con la etiqueta `<frameset>`, que deben colocarse antes de la etiqueta `<body>`. Esta en desuso y en su lugar se utilizan los `<iframes>`. son marcos internos o flotantes detro de las páginas HTML.
+
+
+| ATRIBUTOS            | USO                                          |
+| -------------------- | -------------------------------------------- |
+| src="enlace a abrir" | Se indica lo que se quiere abrir en el marco |
+| name="name"          | Nombre del frame                             |
+| height="alto"        | Altura del marco                             |
+| width="ancho"        | ancho del marco                              |
+
+---
+
+## 1.9 Formularios
+
+Los formularios están formados por cajas de texto y los botones que permiten introducir datos. Son muy utilizados para realizar búsquedas, encuestas o bien introducir datos personales.
+
+Usando HTML se puede únicamente enviar el formulario a un correo electrónico. Si se desea procesar el formulario mediante un programa, es necesario utilizar otros lenguajes como PHP o ASP.
+
+Para definir los formulario se usa la etiqueta `<form></form>`, con atributos como:
+
+
+| Atributo                   | Uso                                                                   |
+| -------------------------- | --------------------------------------------------------------------- |
+| action="acción a realizar" | Tipo de acción que se llevará a cabo con el formulario                |
+| method="post" o "get"      | Forma en la que el formulario es enviado                              |
+| enctype="text/plain"       | Forma en la que viajará la información que se mande por el formulario |
+
+---
 
 ## ANEXO 1 - Juegos CSS
 
