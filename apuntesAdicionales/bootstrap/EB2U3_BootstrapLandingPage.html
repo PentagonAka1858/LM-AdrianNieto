@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentado</title>
+    <!--Link necesario para el funcionamiendo de bootstrap.
+        Con este importamos todas las clases de bootstrap, pudiendo 
+        usarlas de forma rápida-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!--Esta clase "container" sirve para crear un contenedor responsivo
+    Por defecto el contenedor será de tamaño "sm" o "extra small", es decir,
+    extra pequeño. Esto quiere decir que cuando el ancho de la página sea
+    menor que 576px, el ancho del contenedor ocupará todo el ancho.
+    En caso contrario ocupará unas medidas predefinidas por bootstrap-->
+    <div class="container">
+        <!--Con la clase "row" especificamos una fila en un diseño grid.
+        Con bootstrap podemos tener hasta 12 columnas por cada fila-->
+        <div class="row">
+            <!--Con la clase "col" especificamos la columna
+            Por defecto ocupará un tamaño automatico dependiendo de cuantas columnas haya por fila
+            También se puede especificar su tamaño de responsividad (igual que en contenedor), que en
+            este caso es "md" o mediano.
+            También se puede especificar cuantas columnas ocupará, en este caso 6 columnas.
+            Seguirá el formato "col-*-*", siendo el primer * el tamaño responsivo y el segundo *
+            el tamaño de columnas que ocupará-->
+            <div class="col-md-6">
+                <h1>Bienvenido a mi landing page</h1>
+                <p>Esta es una landing page sencilla creada con Bootstrap 5 Grid.</p>
+                <!--También tenemos clases para botones y sus colores
+                En este caso tenemos la clase "btn" que sirve para crear botones
+                Con "btn-primary" seleccionamos el color, pudiendo usar
+                danger para rojo, warning para amarillo...-->
+                <button class="btn btn-warning">Llamada a la acción</button>
+            </div>
+            <!--Igual que la anterior columna-->
+            <div class="col-md-6">
+                <!--Tenemos la clase "img-fluid" que hará la imagen responsiva, cambiando
+                su tamaño dependiendo del ancho de la pantalla-->
+                <img src="https://cdn.pixabay.com/photo/2017/07/31/20/06/ball-2560612_640.jpg" class="img-fluid"
+                    alt="Imagen principal">
+            </div>
+        </div>
+        <!--Añade a la fila un margen arriba de 4 unidades
+        También se puede usar "mb" para el margen inferior y parecidos.-->
+        <div class="row mt-4">
+            <!--Igual que anteriormente pero ocupando 4 columnas-->
+            <div class="col-md-4">
+                <!--Esto es una clase que crea una plantilla para una especie de 
+                carta de presentación o tarjeta-->
+                <div class="card">
+                    <!--Este es el cuerpo de la tarjeta (el texto despues de la imagen)-->
+                    <div class="card-body">
+                        <!--Aqui con "card-tittle" especificamos el título de la tarjeta-->
+                        <h5 class="card-title">Característica 1</h5>
+                        <!--Aqui especificamos el texto genérico de la tarjeta-->
+                        <p class="card-text">Descripción de la característica 1.</p>
+                    </div>
+                </div>
+            </div>
+            <!--Igual que anteriormente pero ocupando 4 columnas-->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Característica 2</h5>
+                        <p class="card-text">Descripción de la característica 2.</p>
+                    </div>
+                </div>
+            </div>
+            <!--Igual que anteriormente pero ocupando 4 columnas-->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Característica 3</h5>
+                        <p class="card-text">Descripción de la característica 3.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
