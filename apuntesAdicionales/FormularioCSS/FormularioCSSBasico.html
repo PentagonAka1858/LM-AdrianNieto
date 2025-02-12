@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<!--Cabecera-->
+<head>
+    <title>Ejemplo de CSS con formularios</title>
+    <meta charset="utf-8">
+    <!--Para que quede más compacto, el estilo estará dentro del mismo HTML-->
+    <style>
+        input[type=text], select{
+            display: block;
+            margin-bottom: 30px;
+            margin-top: 5px;
+            width: 80%;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        form {
+            width: 45%;
+            margin: auto;
+        }
+        fieldset{
+            border-radius: 20px;
+            padding: 4%;
+        }
+        legend{
+            font-weight: bolder;
+        }
+        input:focus{
+            background-color: #28edf428;
+        }
+    </style>
+</head>
+<!--Cuerpo-->
+<body>
+<form>
+    <fieldset>
+        <legend>Datos personales</legend>
+        <label for="idnombre">Nombre y apellidos</label>
+        <input type="text">
+        <label for="situacionlaboral">Situación laboral</label>
+        <select id="situacionlaboral">
+            <option>En paro</option>
+            <option>En activo</option>
+            <option>Jubilado</option>
+        </select>
+        <input type="radio" name="hijos">
+        <label for="idsinhijos">Sin hijos</label>
+        <input type="radio" name="hijos">
+        <label for="idconhijos">Con hijos</label>
+    </fieldset>
+</form>
+</body>
+</html>
