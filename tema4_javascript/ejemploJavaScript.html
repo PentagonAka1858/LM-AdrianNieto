@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo JavaScript</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        let mensaje = "Holas";
+        document.write(mensaje + "<br>");
+        
+        async function sleep(ms) {
+            await new Promise((resolve) => setTimeout(resolve, ms));
+        }
+        
+        let arrayNombres = new Array("Buenas", "tardes", "a", "todos");
+        async function main(){
+            for (let i = 0; i < arrayNombres.length; i++){
+                await sleep(1000);
+                document.write(arrayNombres[i] + " ");
+            }
+        }
+        main();
+    </script>
+</body>
+</html>
