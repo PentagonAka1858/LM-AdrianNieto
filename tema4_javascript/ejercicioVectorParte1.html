@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo JavaScript</title>
+</head>
+<body>
+    <script>
+        /*
+        Envía un enlace a una carpeta de github donde vayas escribiendo las tareas que se mandaran en el tema.
+
+        En este caso se pide que crees un vector de 100 números y devuelvas el sumatorio de todos los números.
+        */
+        "use strict";
+        let array = new Array(100);
+        let sumatorio = 0;
+        document.write("Array: <br> [")
+        for (var i = 0; i < 100; i++){
+            array[i] = i+1;
+            sumatorio = sumatorio + array[i];
+            if (i == 50){
+                document.write("<br>");
+            }
+            document.write(array[i] + ", ");
+        }
+        document.write("]<br>Sumatorio del array: " + sumatorio);
+    </script>
+</body>
+</html>

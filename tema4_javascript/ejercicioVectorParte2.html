@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo JavaScript</title>
+</head>
+<body>
+    <script>
+        /*
+        Diseña un script que vaya leyendo números y guardándolos en un array. Una vez lleno mostrará el array y deberá decir cuantos números son pares y cuantos son impares. La entrada de datos termina cuando el usuario teclea 0 o un valor no numérico.
+        
+        Por ejemplo si tecleo: 3,5,4,6,7,8, 11 el script me dirá que el array de entrada es [3,5,4,6,7,8, 11] y que hay 3 pares y 4 impares.
+        */
+        "use strict";
+        let userInput = 1;
+        let array = new Array();
+        let contadorPares = 0;
+        let contadorImpares = 0;
+        userInput = prompt("Introduce numeros para guardar en un array (0 para salir):");
+        
+        while (userInput != 0){
+            array.push(userInput);
+            userInput = prompt("Introduce numeros para guardar en un array (0 para salir):");
+        }
+        document.write("Array: <br> [")
+        
+        for (let i = 0; i < array.length; i++){
+            document.write(array[i] + " ");
+            if (array[i] % 2 == 0){
+                contadorPares++;
+            } else {
+                contadorImpares++;
+            }
+        }
+        
+        document.write("]<br>Pares: " + contadorPares + "<br>Impares: " + contadorImpares);
+    </script>
+</body>
+</html>
