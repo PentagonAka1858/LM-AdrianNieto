@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo JavaScript</title>
+</head>
+<body>
+    <script>
+        /*
+        Diseña un script que vaya leyendo números y guardándolos en un array. Una vez lleno mostrará el array y deberá decir cuantos números son pares y cuantos son impares. La entrada de datos termina cuando el usuario teclea 0 o un valor no numérico.
+        
+        Por ejemplo si tecleo: 3,5,4,6,7,8, 11 el script me dirá que el array de entrada es [3,5,4,6,7,8, 11] y que hay 3 pares y 4 impares.
+        */
+        "use strict";
+        let array = new Array(); // Array que vamos a tratar
+        
+        // Funcion para introducir los datos al array
+        function introducirDatos(array){
+            let userInput = 1; // Variable que funcionará como menú
+            // Preguntamos al usuario que numero quiere guardar
+            userInput = prompt("Introduce numeros para guardar en un array (0 para salir):");
+            // Mientras no sea 0, seguimos preguntando y introduciendo el numero al array
+            while (userInput != 0){
+                array.push(userInput);
+                // Está así ordenado para no introducir el ultimo 0 al array
+                userInput = prompt("Introduce numeros para guardar en un array (0 para salir):");
+            }
+        }
+        
+        // Funcion que rellena el array y lo muestra.
+        // Añadira del 1 hasta la longitud del array
+        function mostrarArray(array){
+            document.write("Array: <br> [");
+            // Recorremos la longitud del array recibido
+            for (let i = 0; i < array.length; i++){
+                // Cada 25 posiciones insertamos un salto de pagina
+                if (i % 25 == 0 && i > 1){
+                    document.write("<br>");
+                }
+                // Si es la ultima posicion, cerramos el corchete y añadimos salto de pagina
+                if (i == array.length-1){
+                    document.write(array[i] + "]<br>");
+                } else { // En los otros casos, mostramos el numero y una ,
+                    document.write(array[i] + ", ");
+                }
+            }
+        }
+        
+        // Funcion en la que recorres el array y comprobamos si tiene imapres o no
+        function contarParImpar(array){
+            // Variables para contar pares e impares
+            let pares = 0;
+            let impares = 0;
+            // Recorremos el array
+            for (let i = 0; i < array.length; i++){
+                if (array[i] % 2 == 0){
+                    // Si es par sumamos al contador de pares
+                    pares++;
+                } else {
+                    // Si no es par es impar, por lo que sumamos al contador de impares
+                    impares++;
+                }
+            }
+            document.write("Pares: " + pares + "<br>Impares: " + impares);
+        }
+        
+        // Llamamos a las funciones
+        introducirDatos(array);
+        mostrarArray(array);
+        contarParImpar(array);
+    </script>
+</body>
+</html>

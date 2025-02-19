@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo JavaScript</title>
+</head>
+<body>
+    <script>
+        /*
+        Envía un enlace a una carpeta de github donde vayas escribiendo las tareas que se mandaran en el tema.
+
+        En este caso se pide que crees un vector de 100 números y devuelvas el sumatorio de todos los números.
+        */
+        "use strict";
+        // Variable para la matriz, pudiendo especificar la longitud
+        let array = new Array(100);
+        
+        // Funcion que rellena el array y lo muestra.
+        // Añadira del 1 hasta la longitud del array
+        function mostrarArray(array){
+            document.write("Array: <br> [");
+            // Recorremos la longitud del array recibido
+            for (let i = 0; i < array.length; i++){
+                // Vamos asignando desde 1 hasta la longitud del array
+                array[i] = i+1;
+                // Cada 25 posiciones insertamos un salto de pagina
+                if (i % 25 == 0 && i > 1){
+                    document.write("<br>");
+                }
+                // Si es la ultima posicion, cerramos el corchete y añadimos salto de pagina
+                if (i == array.length-1){
+                    document.write(array[i] + "]<br>");
+                } else { // En los otros casos, añadimos el numero y una ,
+                    document.write(array[i] + ", ");
+                }
+            }
+        }
+        
+        // Funcion que hace el sumatorio del contenido del array
+        // Y devuelve su valor como int
+        function sumatorioArray(array){
+            let sumatorio = 0;
+            // Recorremos el array
+            for (let i = 0; i < array.length; i++){
+                // Asignamos a sumatorio su propio valor + la posicion i de la matriz
+                sumatorio = sumatorio + array[i];
+            }
+            // Devolvemos el valor de sumatorio
+            return sumatorio;
+        }
+        
+        // Mostramos el array de 100 posiciones
+        mostrarArray(array);
+        // Escribimos el sumatorio del array creado 
+        document.write("Sumatorio del array: " + sumatorioArray(array));
+    </script>
+</body>
+</html>
