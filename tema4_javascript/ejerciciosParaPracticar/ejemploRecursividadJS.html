@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursividad</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        
+        function potenciaRecursiva(potenciado, potencia){
+            if (potenciado < 0 || potencia <= 0){
+                return null;
+            }
+            if (potencia === 1){
+                return potenciado;
+            }
+            return potenciado * potenciaRecursiva(potenciado,potencia - 1);
+        }
+        let potenciado = 0;
+        potenciado = prompt("Introduce un numero para potenciarlo a otro:");
+        let potencia = 0;
+        potencia = prompt("Introduce un numero para potenciarlo al anterior:");
+        document.write(potenciaRecursiva(potenciado,potencia));
+    </script>
+</body>
+</html>
