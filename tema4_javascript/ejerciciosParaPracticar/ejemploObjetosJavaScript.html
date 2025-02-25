@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO en JS</title>
+</head>
+<body>
+    <script>
+        // Crear objeto con SUMATORIO, MAXIMO Y MINIMO
+        "use strict";
+        funcionesArray={
+            arrayNumeros:new Array(),
+            setDatos:function(array){
+                arrayNumeros = array;
+            },
+            sumatorio:function(){
+                let suma = 0;
+                for (pos in this.arrayNumeros){
+                    suma = suma + this.arrayNumeros[pos];
+                }
+                return suma;
+            },
+            multiplicacion:function(){
+                let multi = 1;
+                for (pos in this.arrayNumeros){
+                    multi = multi * this.arrayNumeros[pos];
+                }
+                return multi;
+            },
+            minimo:function(){
+                let numMinimo = 0;
+                for (pos in this.arrayNumeros){
+                    if (pos == 1) numMinimo = this.arrayNumeros[pos];
+                    if (this.arrayNumeros[pos] < numMinimo) numMinimo = this.arrayNumeros[pos];
+                }
+                return NumMinimo;
+            },
+            maximo:function(){
+                let numMaximo = 0;
+                for (pos in this.arrayNumeros){
+                    if (pos == 1) numMaximo = this.arrayNumeros[pos];
+                    if (this.arrayNumeros[pos] > numMaximo) numMaximo = this.arrayNumeros[pos];
+                }
+                return numMaximo;
+            }
+        }
+        
+        let arrayNumero = new Array(3);
+        arrayNumero[0] = 1;
+        arrayNumero[1] = 2;
+        arrayNumero[2] = 3;
+        funcionesArray.setDatos(arrayNumero);
+        document.write("HOLA");
+        document.write("ARRAY: " + funcionesArray.arrayNumeros);
+        document.write("SUMATORIO: " + funcionesArray.sumatorio());
+        document.write("MULTIPLICACION: " + funcionesArray.multiplicacion());
+        document.write("MINIMO: " + funcionesArray.minimo());
+        document.write("MAXIMO: " + funcionesArray.maximo());
+    </script>
+</body>
+</html>
