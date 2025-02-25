@@ -9,28 +9,45 @@
     <script>
         // Crear objeto con SUMATORIO, MAXIMO Y MINIMO
         "use strict";
-        funcionesArray={
+
+        // Funcion para introducir los datos al array
+        function introducirDatos(array){
+            let userInput = 1; // Variable que funcionará como menú
+            // Preguntamos al usuario que numero quiere guardar
+            userInput = parseInt(prompt("Introduce numeros para guardar en un array (0 o vacio para salir):"));
+            // Mientras no sea 0, seguimos preguntando y introduciendo el numero al array
+            while (userInput != 0 && !isNaN(userInput)){
+                array.push(userInput);
+                // Está así ordenado para no introducir el ultimo 0 al array
+                userInput = parseInt(prompt("Introduce numeros para guardar en un array (0 o vacio para salir):"));
+            }
+        }
+
+        // Objeto para tratar arrays
+        let funcionesArray={
             arrayNumeros:new Array(),
             setDatos:function(array){
-                arrayNumeros = array;
+                for (let pos in array){
+                    this.arrayNumeros.push(array[pos]);
+                }
             },
             sumatorio:function(){
                 let suma = 0;
-                for (pos in this.arrayNumeros){
+                for (let pos in this.arrayNumeros){
                     suma = suma + this.arrayNumeros[pos];
                 }
                 return suma;
             },
             multiplicacion:function(){
                 let multi = 1;
-                for (pos in this.arrayNumeros){
+                for (let pos in this.arrayNumeros){
                     multi = multi * this.arrayNumeros[pos];
                 }
                 return multi;
             },
             minimo:function(){
                 let numMinimo = 0;
-                for (pos in this.arrayNumeros){
+                for (let pos in this.arrayNumeros){
                     if (pos == 1) numMinimo = this.arrayNumeros[pos];
                     if (this.arrayNumeros[pos] < numMinimo) numMinimo = this.arrayNumeros[pos];
                 }
@@ -38,25 +55,22 @@
             },
             maximo:function(){
                 let numMaximo = 0;
-                for (pos in this.arrayNumeros){
+                for (let pos in this.arrayNumeros){
                     if (pos == 1) numMaximo = this.arrayNumeros[pos];
                     if (this.arrayNumeros[pos] > numMaximo) numMaximo = this.arrayNumeros[pos];
                 }
                 return numMaximo;
             }
-        }
+        };
         
-        let arrayNumero = new Array(3);
-        arrayNumero[0] = 1;
-        arrayNumero[1] = 2;
-        arrayNumero[2] = 3;
+        let arrayNumero = new Array();
+        introducirDatos(arrayNumero)
         funcionesArray.setDatos(arrayNumero);
-        document.write("HOLA");
         document.write("ARRAY: " + funcionesArray.arrayNumeros);
-        document.write("SUMATORIO: " + funcionesArray.sumatorio());
-        document.write("MULTIPLICACION: " + funcionesArray.multiplicacion());
-        document.write("MINIMO: " + funcionesArray.minimo());
-        document.write("MAXIMO: " + funcionesArray.maximo());
+        document.write("<br>SUMATORIO: " + funcionesArray.sumatorio());
+        document.write("<br>MULTIPLICACION: " + funcionesArray.multiplicacion());
+        document.write("<br>MINIMO: " + funcionesArray.minimo());
+        document.write("<br>MAXIMO: " + funcionesArray.maximo());
     </script>
 </body>
 </html>
