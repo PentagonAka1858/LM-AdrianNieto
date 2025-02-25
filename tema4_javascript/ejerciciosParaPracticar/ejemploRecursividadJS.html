@@ -9,19 +9,27 @@
     <script>
         "use strict";
         
+        // Funcion recursiva para la potencia
         function potenciaRecursiva(potenciado, potencia){
+            // En caso de ser la entrada no válida, devolvemos null
             if (potenciado < 0 || potencia <= 0){
                 return null;
             }
+            // Si la potencia es 1, devolvemos el valor de potenciado
             if (potencia === 1){
                 return potenciado;
             }
+            // En caso de no cumplir nada de lo anterior, llamamos a la propia función restando 1 a la potencia
             return potenciado * potenciaRecursiva(potenciado,potencia - 1);
         }
+        // Numero que usaremos para llamar al numero que queremos potenciar
         let potenciado = 0;
         potenciado = prompt("Introduce un numero para potenciarlo a otro:");
+        // Numero que potencia al anterior
         let potencia = 0;
         potencia = prompt("Introduce un numero para potenciarlo al anterior:");
+        
+        // Escribimos el resultado de la función recursiva
         document.write(potenciaRecursiva(potenciado,potencia));
     </script>
 </body>
