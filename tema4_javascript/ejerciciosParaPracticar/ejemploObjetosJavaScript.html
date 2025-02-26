@@ -9,7 +9,6 @@
     <script>
         // Crear objeto con SUMATORIO, MAXIMO Y MINIMO
         "use strict";
-
         // Funcion para introducir los datos al array
         function introducirDatos(array){
             let userInput = 1; // Variable que funcionará como menú
@@ -25,47 +24,79 @@
 
         // Objeto para tratar arrays
         let funcionesArray={
+            // Creamos un array o matriz en el objeto "funcionesArray"
             arrayNumeros:new Array(),
+            // Creamos una función que cambia el valor del array del objeto por el array recibido como parámetro
             setDatos:function(array){
+                // Recorremos con un for-in el array que viene como parametro
+                // El for-in da al valor "pos" las posiciones que hay en el array "array"
+                // siendo así hasta que se recorra el array completo
                 for (let pos in array){
+                    // Añadimos los valores de "array" al array del objeto
                     this.arrayNumeros.push(array[pos]);
                 }
             },
+            // Función que hace el sumatorio de los componentes del array del objeto
             sumatorio:function(){
-                let suma = 0;
+                let suma = 0; // Variable para guardar la suma
+                // Recorremos con un for-in el array del objeto
                 for (let pos in this.arrayNumeros){
+                    // Sumamos cada posición a la variable suma
                     suma = suma + this.arrayNumeros[pos];
                 }
-                return suma;
+                return suma; // Devolvemos el valor de suma
             },
+            // Función que hace la multiplicación de los componentes del array del objeto
             multiplicacion:function(){
-                let multi = 1;
+                // Variable para guardar la multiplicación
+                // Lo asignamos a 1 porque si asignamos 0 siempre daría 0
+                let multi = 1; 
+                // Recorremos con un for-in el array del objeto
                 for (let pos in this.arrayNumeros){
+                    // Multiplicamos cada posición a la variable multi
                     multi = multi * this.arrayNumeros[pos];
                 }
-                return multi;
+                return multi; // Devolvemos el valor de multi
             },
+            // Función que devuelve el mínimo de los componentes del array del objeto
             minimo:function(){
+                // Variable para guardar el valor minimo
+                // También se le podría asignar el valor "Infinity"
                 let numMinimo = 0;
+                // Recorremos con un for-in el array del objeto
                 for (let pos in this.arrayNumeros){
+                    // Si es la primera posición, asignamos el valor a la variable "numMinimo"
                     if (pos == 1) numMinimo = this.arrayNumeros[pos];
+                    // Si el valor del array en la posición es menor que el numero minimo,
+                    // asignamos a "numMinimo" ese valor
                     if (this.arrayNumeros[pos] < numMinimo) numMinimo = this.arrayNumeros[pos];
                 }
-                return NumMinimo;
+                return NumMinimo; // Devolvemos el valor minimo
             },
+            // Función que devuelve el máximo de los componentes del array del objeto
             maximo:function(){
+                // Variable para guardar el valor maximo
+                // También se le podría asignar el valor "-Infinity"
                 let numMaximo = 0;
+                // Recorremos con un for-in el array del objeto
                 for (let pos in this.arrayNumeros){
+                    // Si es la primera posición, asignamos el valor a la variable "numMaximo"
                     if (pos == 1) numMaximo = this.arrayNumeros[pos];
+                    // Si el valor del array en la posición es mayor que el numero máximo,
+                    // asignamos a "numMaximo" ese valor
                     if (this.arrayNumeros[pos] > numMaximo) numMaximo = this.arrayNumeros[pos];
                 }
-                return numMaximo;
+                return numMaximo; // Devolvemos el valor máximo
             }
         };
         
+        // Creamos un nuevo array
         let arrayNumero = new Array();
-        introducirDatos(arrayNumero)
+        // Introducimos los datos a través del usuario
+        introducirDatos(arrayNumero);
+        // Guardamos los datos del array creado en nuestro objeto
         funcionesArray.setDatos(arrayNumero);
+        // Escribimos en el documento los datos del objeto
         document.write("ARRAY: " + funcionesArray.arrayNumeros);
         document.write("<br>SUMATORIO: " + funcionesArray.sumatorio());
         document.write("<br>MULTIPLICACION: " + funcionesArray.multiplicacion());
