@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cargamos JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Ocultar texto</title>
+</head>
+<body>
+    <h1>Primera parte, numeros pares e impartes</h1>
+    <script>
+        /* Esperaremos hasta que el documento esté cargado y listo 
+        * para ser procesado por nuestro programa  */
+        let obj_documento = $(document)
+
+        /* Cuando esté cargado ejecutaremos la función cuyo nombre aparezca aquí */
+        obj_documento.ready(inicio)
+
+        // Función que iniciará las funciones al poner el cursor encima o sacarlo
+        function inicio(){
+            // PRIMERA PARTE
+            let obj_botonPar=$("#buttonPar")
+            // Si el objeto "#buttonPar" es clickeado, ejecutará la función "fn_togglePar"
+            obj_botonPar.click(fn_togglePar)
+            let obj_botonImpar=$("#buttonImpar")
+            // Si el objeto "#buttonImpar" es clickeado, ejecutará la función "fn_toggleImpar"
+            obj_botonImpar.click(fn_toggleImpar)
+            // SEGUNDA PARTE
+            let obj_over=$("#texto")
+            // Si el objeto "#texto" contiene el cursor encima, realizará la funcion "fn_over"
+            obj_over.mouseenter(fn_over)
+            let obj_unfocus=$("#texto")
+            // Si el objeto "#texto" detecta que sale el cursor, realizará la funcion "fn_unfocus"
+            obj_unfocus.mouseleave(fn_unfocus)
+        }
+
+        // Función cuando se pulsa el botón de los pares
+        function fn_togglePar(){
+            let obj_texto=$(".par")
+            // Función de JQuery que muestra y esconde el contenido
+            obj_texto.toggle()
+            
+            // Objeto del botón para cambiar su contenido
+            let obj_boton=$("#buttonPar")
+            
+            // Si el valor "value" del botón es distinto igual a 1 (por defecto):
+            if (obj_boton.val() == 1){
+                // Cambiamos su texto y asignamos el valor 2
+                obj_boton.html("Mostrar texto par")
+                obj_boton.val(2)
+            }else{ // En caso de que no sea 1, es decir, sea 2
+                // Cambiamos su texto al original y le asignamos el valor 1
+                obj_boton.html("Ocultar texto par")
+                obj_boton.val(1)
+            } 
+        }
+        // Función cuando se pulsa el botón de los pares
+        function fn_toggleImpar(){
+            let obj_texto=$(".impar")
+            // Función de JQuery que muestra y esconde el contenido
+            obj_texto.toggle()
+            
+            // Objeto del botón para cambiar su contenido
+            let obj_boton=$("#buttonImpar")
+            
+            // Si el valor "value" del botón es distinto igual a 1 (por defecto):
+            if (obj_boton.val() == 1){
+                // Cambiamos su texto y asignamos el valor 2
+                obj_boton.html("Mostrar texto impar")
+                obj_boton.val(2)
+            }else{ // En caso de que no sea 1, es decir, sea 2
+                // Cambiamos su texto al original y le asignamos el valor 1
+                obj_boton.html("Ocultar texto impar")
+                obj_boton.val(1)
+            }
+        }
+    </script>
+    <p class="impar">1- Este texto es impar</p>
+    <p class="par">2- Este texto es par</p>
+    <p class="impar">3- Este texto es impar</p>
+    <p class="par">4- Este texto es par</p>
+    <p class="impar">5- Este texto es impar</p>
+    <p class="par">6- Este texto es par</p>
+    <p class="impar">7- Este texto es impar</p>
+        <!-- POSIBLE OTRA FORMA DE HACERLO, 
+        Se pueden crear 4 botones e ir ocultandolos y mostrandolos dependiendo
+        de que función se ejecute -->
+    <button id="buttonPar" value="1">Ocultar texto par</button>
+    <button id="buttonImpar" value="1">Ocultar texto impar</button>
+
+    <h1>Segunda parte, cambiar CSS</h1>
+    <script>
+        // Función que carga el objeto con id "#texto" y cambia su CSS para su color de letra y color de fondo
+        function fn_over(){
+            let obj_texto=$("#texto")
+            obj_texto.css("background-color", "purple")
+            obj_texto.css("color", "white")
+        }
+
+        // Función que carga el objeto con id "#texto" y cambia su CSS para su color de letra y color de fondo
+        function fn_unfocus(){
+            let obj_texto=$("#texto")
+            obj_texto.css("background-color", "white")
+            obj_texto.css("color", "black")
+        }
+    </script>
+    <div>
+        <p id="texto" style="width:fit-content;">Coloca el puntero encima de mí</p>
+    </div>
+</body>
+</html>
