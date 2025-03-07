@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora 2 numeros</h1>
+    <p>Para calcular una operación entre dos numeros debes introducir ambos números y el operador a utilizar.</p>
+    <hr>
+    <p>Introduce el número 1 <input type="text" name="num1" class="num1 operar"></p>
+    <p>Introduce el número 2 <input type="text" name="num2" class="num2 operar"></p>
+    <p>Introduce el operador (+, -, /, ^) <input type="text" name="operador" class="operador operar"></p>
+    <input type="button" class="calcular" value="Calcular">
+    <div class="resultado"></div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(inicio);
+        
+        function inicio(){
+            // Si hacemos click en calcular, ejecutará la función cálculo
+            $(".calcular").click(calculo)
+            // Si pulsamos la tecla "Enter" (código 13) dentro del input de operador, ejecutará la función cálculo
+            $(".operar").keypress(function(event){ 
+                if (event.which == 13){
+                    calculo();
+                }
+                });
+        }
+        
+        function calculo(){
+            let num1, num2, resultado;
+            // Recibimos y almacenamos los valores de los numeros
+			num1=Number($(".num1").val());
+			num2=Number($(".num2").val());
+            // Dependiendo del operador introducido en la clase .operador, hará una acción u otra
+			switch ($(".operador").val()){
+                case "+":
+                    resultado = num1 + num2;
+                    break;
+                case "-":
+                    resultado = num1 - num2;
+                    break;
+                case "*":
+                    resultado = num1 * num2;
+                    break;
+                case "/":
+                    // En caso que el numero 2 sea 0, mostramos que es indefinido
+                    if (num2 == 0 ) {
+                        resultado = NaN
+                        $(".resultado").html("<p>Es indefinido</p>");
+                    } else {
+                        // Si no es 0, realizamos la operación
+                        resultado = num1 / num2;
+                    }
+                    break;
+                case "^":
+                    resultado = num1 ** num2;
+                    break;
+                default:
+                    // En caso de no cumplir ninguna acción, devolverá la siguiente
+                    $(".resultado").html("<p>El operador no es válido</p>");
+            }
+            // Si el valor del resultado no es indefinido (se ha realizado alguna accion), escribimos por pantalla
+            // el mensaje del resultado
+            if (!isNaN(resultado)){
+                $(".resultado").html("<p>El resultado de la operación es "+resultado+"</p>");
+            }
+        }
+    </script>
+</body>
+</html>
