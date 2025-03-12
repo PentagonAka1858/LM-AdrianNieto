@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 JS Adrián Nieto</title>
+    
+    <!--  SCRIPT PARA QUE QUEDE FUNCIONAL  -->
+    <script type="text/javascript">
+        "use strict"
+        // Pedimos al usuario el numero de tablas que quiere introducir
+        let numeroTablas = parseInt(prompt("¿Cuántas tablas de multiplicar quieres mostrar (desde 1 hasta X)?"));
+        
+        // En caso de que sea un numero o sea menor que 1 o indefinido, lo volvemos a pedir
+        while (numeroTablas < 1 || isNaN(numeroTablas)){
+            numeroTablas = parseInt(prompt("Debe ser un numero mayor que 0, vuelva a introducirlo:"));
+        }
+        // Escribimos una caja que rodeará el resto
+        document.writeln("<div class='fuera'>")
+        // Creamos un bucle que desde 1 hasta el numero solicitado, repetirá una acción
+        for (let i = 1; i <= numeroTablas; i++){
+            // Si es par, crearemos una caja con las clases dentro y par
+            if (i%2 == 0){
+                document.writeln("<div class='dentro par'>");
+            } else {
+                // En caso de no ser par, será de clase dentro e impar
+                document.writeln("<div class='dentro impar'>");
+            }
+            // Creamos el encabezado de cada tabla de multiplicar
+            document.writeln("<h1>Tabla de multiplicar del " + i + "</h1>");
+            // Creamos la tabla de multiplicar que se repita desde 1 hasta 10 
+            for (let j = 1; j <= 10 ; j++){
+                // Escribimos una lista que imprima los numeros a multiplicar y la solución, 
+                // siendo estos numeros el numero del bucle de "i" (0 hasta numero solicitado)
+                // y j, siendo los numeros del 1 al 10
+                document.writeln("<li>" + i + " x " + j + " = " + (i*j) +"</li>");
+            }
+            // Cerramos las cajas de dentro
+            if (i%2 == 0){
+                document.writeln("</div class='dentro par'>");
+            } else {
+                document.writeln("</div class='dentro impar'>");
+            }
+        }
+        // Una vez acabado el bucle, cerramos la caja de fuera
+        document.writeln("</div class='fuera'>")
+    </script>
+    
+    <!--  CSS PARA QUE QUEDE BONITO  -->
+    <style>
+        .fuera{
+            display:flex;
+            width: fit-content;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .dentro{
+            width: 300px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 10px;
+        }
+        .impar{
+            background-color: rgb(197, 197, 197);
+        }
+        h1{
+            font-size: 1.2em;
+            text-decoration:underline red 2px;
+            margin: 5px 5px 5px 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
