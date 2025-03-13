@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("div#1").animate({left: '75%'});
+                $("div#2").animate({right: '75%'});
+            });
+            $("button").dblclick(function(){
+                $("div#1").animate({left: '5px'});
+                $("div#2").animate({right: '5px'});
+            });
+        });
+    </script>
+    <title>Cubitos JS</title>
+</head>
+<body>
+    <button>X</button>
+
+
+    <p>
+        Pulsa un solo click en el botón para que se crucen los cubos.
+        <br>
+        Pulsa doble click para volver a la posición inicial.
+    </p>
+
+    <div id="1" style="background:#98bf21;height:100px;width:100px;position:absolute;"></div>
+    <div id="2" style="background:#fc0b0b;height:100px;width:100px;position:absolute;right:5px;"></div>
+</body>
+</html>
