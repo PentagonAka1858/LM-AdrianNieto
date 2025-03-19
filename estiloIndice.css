@@ -59,7 +59,7 @@ a:hover{
 
 .contenedor {
     width: 650px;
-    height: 400px;
+    height: 600px;
     overflow: auto;
     scrollbar-width:none;
 }
@@ -138,7 +138,7 @@ div.temas{
 
 .terminal_body {
     background: rgb(34, 34, 34);
-    height: calc(100% - 30px);
+    height: fit-content;
     padding-top: 2px;
     margin-top: -1px;
     padding-bottom: 10px;

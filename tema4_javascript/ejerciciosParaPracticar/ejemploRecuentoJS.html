@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        // Iniciamos la función "inicio" al cargar la página
+        $(document).ready(inicio);
+        
+        // Función que espera a que hagamos click a cualquiera de los checkbox
+        function inicio(){
+            $("#accion").click(contar);
+            $("#aventura").click(contar);
+            $("#terror").click(contar);
+            $("#plataforma").click(contar);
+            $("#unjugador").click(contar);
+            $("#multijugador").click(contar);
+            $("#rol").click(contar);
+        }
+        
+        // Función para contar cuantos checkbox hay marcados y mostrarlo en el input text
+        function contar(){
+            let contador = 0; // Variable para guardar el contador de checkbox clickados
+            let ids= new Array(); // Creamos una variable tipo array para guardar los IDs
+            // Guardamos los IDs de los checkbox
+            ids=["#accion", "#aventura", "#terror", "#plataforma", "#unjugador", "#multijugador", "#rol"];
+            
+            // Recorremos el array ids
+            for (let pos in ids){
+                // Creamos una variable comprobar si el checkbox está marcado o no
+                let genero = $(ids[pos])
+                if (genero.prop("checked")) {
+                    contador++;
+                }
+            }
+            // Escribimos el contador en el input "informe"
+            let mensaje = "Numero de generos: " + contador;
+            $("#informe").val(mensaje);
+        }
+    </script>
+    <title>Ejemplo recuento con JQuery</title>
+</head>
+<body>
+    <div>
+        <input  type="checkbox"
+                name="medio"
+                id="accion">
+        <label for="accion">Acción</label>
+    </div>
+    <div>
+        <input  type="checkbox"
+                name="medio"
+                id="aventura">
+        <label for="aventura">Aventura</label>
+    </div>
+    <div>
+        <input  type="checkbox"
+                name="medio"
+                id="terror">
+        <label for="terror">Terror</label>
+    </div>
+    <div>
+        <input  type="checkbox"
+                name="medio"
+                id="plataforma">
+        <label for="plataforma">Plataforma</label>
+    </div>
+    <div>
+        <input  type="checkbox"
+                name="medio"
+                id="unjugador">
+        <label for="unjugador">Un jugador</label>
+    </div>
+    <div>
+        <input  type="checkbox"
+                name="medio"
+                id="multijugador">
+        <label for="multijugador">Multijugador</label>
+    </div>
+    <div>
+        <input  type="checkbox"
+                name="medio"
+                id="rol">
+        <label for="rol">Rol</label>
+    </div>
+    <br>
+    <input id="informe" type="text" value="Numero de generos: 0" disabled>
+</body>
+</html>
