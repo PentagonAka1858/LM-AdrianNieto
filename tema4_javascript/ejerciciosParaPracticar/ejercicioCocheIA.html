@@ -10,29 +10,72 @@
             margin: 0 auto;
             padding: 20px;
         }
-        .form-section {
+
+        .seccion-formulario {
             margin-bottom: 20px;
             padding: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
         }
-        .form-section h3 {
+
+        .seccion-formulario h3 {
             margin-top: 0;
             color: #333;
         }
-        .option-group {
+
+        .grupo-opciones {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
-        .option-item {
+
+        .opcion-concreta {
             margin-right: 15px;
             margin-bottom: 10px;
         }
-        .checkbox-group {
+
+        .grupo-checkbox {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 10px;
+        }
+
+        .tabla-resultados {
+            margin-top: 30px;
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .tabla-resultados th, .tabla-resultados td {
+            border: 2px solid #333;
+            padding: 10px;
+        }
+
+        .tabla-resultados th {
+            background-color: #444;
+            color: white;
+        }
+
+        .tabla-resultados td:nth-child(2) {
+            background-color: #f0f0f0; 
+        }
+
+        .mensaje-error {
+            color: #dc3545;
+            padding: 10px;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+        }
+
+        .pretty-json { /* EN CASO DE ERROR AL FORMATEAR, INTENTAMOS FORMATEAR EL JSON LANZADO */
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border: 1px solid #ddd;
         }
     </style>
     
@@ -44,262 +87,254 @@
 <body>
     <h1>Selección de Características del Vehículo</h1>
     <form>
-        <!-- Tipo de motor (Radio buttons - una sola opción) -->
-        <div class="form-section">
+
+        <div class="seccion-formulario">
             <h3>Tipo de motor</h3>
-            <div class="option-group">
-                <div class="option-item">
+            <div class="grupo-opciones">
+                <div class="opcion-concreta">
                     <input type="radio" id="gasolina" name="motor" value="gasolina">
                     <label for="gasolina">Gasolina</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="diesel" name="motor" value="diesel">
                     <label for="diesel">Diésel</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="hibrido" name="motor" value="hibrido">
                     <label for="hibrido">Híbrido</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="electrico" name="motor" value="electrico">
                     <label for="electrico">Eléctrico</label>
                 </div>
             </div>
         </div>
 
-        <!-- Transmisión (Radio buttons - una sola opción) -->
-        <div class="form-section">
+
+        <div class="seccion-formulario">
             <h3>Transmisión</h3>
-            <div class="option-group">
-                <div class="option-item">
+            <div class="grupo-opciones">
+                <div class="opcion-concreta">
                     <input type="radio" id="manual" name="transmision" value="manual">
                     <label for="manual">Manual</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="automatica" name="transmision" value="automatica">
                     <label for="automatica">Automática</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="cvt" name="transmision" value="cvt">
                     <label for="cvt">CVT</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="doble_embrague" name="transmision" value="doble_embrague">
                     <label for="doble_embrague">Doble embrague</label>
                 </div>
             </div>
         </div>
 
-        <!-- Tracción (Radio buttons - una sola opción) -->
-        <div class="form-section">
+        <div class="seccion-formulario">
             <h3>Tracción</h3>
-            <div class="option-group">
-                <div class="option-item">
+            <div class="grupo-opciones">
+                <div class="opcion-concreta">
                     <input type="radio" id="fwd" name="traccion" value="fwd">
                     <label for="fwd">Delantera (FWD)</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="rwd" name="traccion" value="rwd">
                     <label for="rwd">Trasera (RWD)</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="awd" name="traccion" value="awd">
                     <label for="awd">Total o integral (AWD, 4x4)</label>
                 </div>
             </div>
         </div>
 
-        <!-- Tipo de carrocería (Radio buttons - una sola opción) -->
-        <div class="form-section">
+        <div class="seccion-formulario">
             <h3>Tipo de carrocería</h3>
-            <div class="option-group">
-                <div class="option-item">
+            <div class="grupo-opciones">
+                <div class="opcion-concreta">
                     <input type="radio" id="sedan" name="carroceria" value="sedan">
                     <label for="sedan">Sedán</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="hatchback" name="carroceria" value="hatchback">
                     <label for="hatchback">Hatchback</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="suv" name="carroceria" value="suv">
                     <label for="suv">SUV</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="coupe" name="carroceria" value="coupe">
                     <label for="coupe">Coupé</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="cabrio" name="carroceria" value="cabrio">
                     <label for="cabrio">Cabrio/Descapotable</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="familiar" name="carroceria" value="familiar">
                     <label for="familiar">Familiar</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="pickup" name="carroceria" value="pickup">
                     <label for="pickup">Pick-up</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="monovolumen" name="carroceria" value="monovolumen">
                     <label for="monovolumen">Monovolumen</label>
                 </div>
             </div>
         </div>
 
-        <!-- Número de puertas (Radio buttons - una sola opción) -->
-        <div class="form-section">
+        <div class="seccion-formulario">
             <h3>Número de puertas</h3>
-            <div class="option-group">
-                <div class="option-item">
+            <div class="grupo-opciones">
+                <div class="opcion-concreta">
                     <input type="radio" id="puertas2" name="puertas" value="2">
                     <label for="puertas2">2 puertas</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="puertas3" name="puertas" value="3">
                     <label for="puertas3">3 puertas</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="puertas4" name="puertas" value="4">
                     <label for="puertas4">4 puertas</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="puertas5" name="puertas" value="5">
                     <label for="puertas5">5 puertas</label>
                 </div>
             </div>
         </div>
 
-        <!-- Número de plazas (Radio buttons - una sola opción) -->
-        <div class="form-section">
+        <div class="seccion-formulario">
             <h3>Número de plazas</h3>
-            <div class="option-group">
-                <div class="option-item">
+            <div class="grupo-opciones">
+                <div class="opcion-concreta">
                     <input type="radio" id="plazas2" name="plazas" value="2">
                     <label for="plazas2">2 plazas</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="plazas4" name="plazas" value="4">
                     <label for="plazas4">4 plazas</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="plazas5" name="plazas" value="5">
                     <label for="plazas5">5 plazas</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="radio" id="plazas7" name="plazas" value="7">
                     <label for="plazas7">7 plazas o más</label>
                 </div>
             </div>
         </div>
 
-        <!-- Equipamiento tecnológico (Checkboxes - múltiples opciones) -->
-        <div class="form-section">
+        <div class="seccion-formulario">
             <h3>Equipamiento tecnológico</h3>
-            <div class="checkbox-group">
-                <div class="option-item">
+            <div class="grupo-checkbox">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="pantalla_tactil" name="tecnologia" value="pantalla_tactil">
                     <label for="pantalla_tactil">Pantalla táctil</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="gps" name="tecnologia" value="gps">
                     <label for="gps">Sistema de navegación GPS</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="android_apple" name="tecnologia" value="android_apple">
                     <label for="android_apple">Android Auto/Apple CarPlay</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="cargador_inalambrico" name="tecnologia" value="cargador_inalambrico">
                     <label for="cargador_inalambrico">Cargador inalámbrico</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="asistente_voz" name="tecnologia" value="asistente_voz">
                     <label for="asistente_voz">Asistente de voz</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="cuadro_digital" name="tecnologia" value="cuadro_digital">
                     <label for="cuadro_digital">Cuadro de instrumentos digital</label>
                 </div>
             </div>
         </div>
 
-        <!-- Sistemas de seguridad y asistencia (Checkboxes - múltiples opciones) -->
-        <div class="form-section">
+        <div class="seccion-formulario">
             <h3>Sistemas de seguridad y asistencia</h3>
-            <div class="checkbox-group">
-                <div class="option-item">
+            <div class="grupo-checkbox">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="frenado_emergencia" name="seguridad" value="frenado_emergencia">
                     <label for="frenado_emergencia">Frenado autónomo de emergencia</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="control_crucero" name="seguridad" value="control_crucero">
                     <label for="control_crucero">Control de crucero adaptativo</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="asistente_carril" name="seguridad" value="asistente_carril">
                     <label for="asistente_carril">Asistente de mantenimiento de carril</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="camara_360" name="seguridad" value="camara_360">
                     <label for="camara_360">Cámara 360°</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="sensores_aparcamiento" name="seguridad" value="sensores_aparcamiento">
                     <label for="sensores_aparcamiento">Sensores de aparcamiento</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="detector_angulo" name="seguridad" value="detector_angulo">
                     <label for="detector_angulo">Detector de ángulo muerto</label>
                 </div>
             </div>
         </div>
 
-        <!-- Confort y extras (Checkboxes - múltiples opciones) -->
-        <div class="form-section">
+        <div class="seccion-formulario">
             <h3>Confort y extras</h3>
-            <div class="checkbox-group">
-                <div class="option-item">
+            <div class="grupo-checkbox">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="climatizador" name="confort" value="climatizador">
                     <label for="climatizador">Climatizador automático</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="asientos_calefactados" name="confort" value="asientos_calefactados">
                     <label for="asientos_calefactados">Asientos calefactados/ventilados</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="tapiceria_cuero" name="confort" value="tapiceria_cuero">
                     <label for="tapiceria_cuero">Tapicería de cuero</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="techo_panoramico" name="confort" value="techo_panoramico">
                     <label for="techo_panoramico">Techo panorámico</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="iluminacion_led" name="confort" value="iluminacion_led">
                     <label for="iluminacion_led">Iluminación ambiental LED</label>
                 </div>
             </div>
         </div>
 
-        <!-- Opciones de personalización (Checkboxes - múltiples opciones) -->
-        <div class="form-section">
+        <div class="seccion-formulario">
             <h3>Opciones de personalización</h3>
-            <div class="checkbox-group">
-                <div class="option-item">
+            <div class="grupo-checkbox">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="colores_carroceria" name="personalizacion" value="colores_carroceria">
                     <label for="colores_carroceria">Colores de carrocería</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="tipos_llantas" name="personalizacion" value="tipos_llantas">
                     <label for="tipos_llantas">Tipos de llantas y tamaños</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="accesorios_deportivos" name="personalizacion" value="accesorios_deportivos">
                     <label for="accesorios_deportivos">Accesorios deportivos</label>
                 </div>
-                <div class="option-item">
+                <div class="opcion-concreta">
                     <input type="checkbox" id="paquetes_equipamiento" name="personalizacion" value="paquetes_equipamiento">
                     <label for="paquetes_equipamiento">Paquetes de equipamiento</label>
                 </div>
@@ -311,5 +346,8 @@
             <button type="reset">Reiniciar formulario</button>
         </div>
     </form>
+    <div id="resultados">
+
+    </div>
 </body>
 </html>
