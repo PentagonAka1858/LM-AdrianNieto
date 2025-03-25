@@ -45,37 +45,41 @@ function mostrarResultado(event){
     // Para depuración, mostramos el prompt que pasará a la IA automaticamente
     console.log("Prompt:", prompt);
 
-    /* EJEMPLO DE RESPUESTA API DE MAGICLOOPS PARA DEPURACIÓN
-        const coche = [
+    //  EJEMPLO DE RESPUESTA API DE MAGICLOOPS PARA DEPURACIÓN
+    /*
+        const coche = {
+        "response": [
             {
-                "coches": [
-                {
-                    "nombre": "Tesla",
-                    "modelo": "Model Y",
-                    "descripcion": "El Tesla Model Y es un SUV totalmente eléctrico que ofrece tracción total (AWD) y espacio para 5 pasajeros. Equipado con una pantalla táctil central, es compatible con Android Auto y Apple CarPlay, además de contar con cargador inalámbrico, frenado autónomo de emergencia y cámara 360°."
-                },
-                {
-                    "nombre": "Ford",
-                    "modelo": "Mustang Mach-E",
-                    "descripcion": "El Ford Mustang Mach-E es un SUV eléctrico que proporciona una experiencia de manejo automatizada con tracción total. Con 5 puertas y espacio para 5 ocupantes, presenta una pantalla táctil de gran tamaño, compatibilidad con Android Auto y Apple CarPlay, y cuenta con cargador inalámbrico, sistema de frenado autónomo de emergencia y cámara 360°."
-                },
-                {
-                    "nombre": "Volkswagen",
-                    "modelo": "ID.4",
-                    "descripcion": "El Volkswagen ID.4 es un SUV eléctrico que combina sostenibilidad y funcionalidad. Su sistema de tracción total y capacidad para 5 pasajeros lo hacen ideal para familias. Incorpora una pantalla táctil, tecnología de carga inalámbrica, frenado autónomo de emergencia y cámara 360°, además de ser compatible con Android Auto y Apple CarPlay."
-                }
-                ]
+            "name": "Toyota RAV4 Hybrid",
+            "description": "A compact SUV with a spacious interior, 4WD capability, and excellent fuel efficiency thanks to its hybrid engine.",
+            "image": "https://example.com/toyota-rav4-hybrid.jpg"
+            },
+            {
+            "name": "Honda CR-V Hybrid",
+            "description": "A popular SUV known for its roomy cabin, 4WD option, and impressive fuel economy, making it a great choice for families.",
+            "image": "https://example.com/honda-cr-v-hybrid.jpg"
+            },
+            {
+            "name": "Subaru Outback",
+            "description": "A versatile SUV offering 4WD, ample cargo space, and good fuel efficiency, perfect for adventurous trips.",
+            "image": "https://example.com/subaru-outback.jpg"
             }
         ]
+        }
+        
+        
 
-    console.log(coche[0].coches[0].nombre);
-    console.log(coche[0].coches[0].descripcion);
+    console.log(coche.response[0].name);
+    console.log(coche.response[0].description);
+    console.log(coche.response[0].image);
     
-    console.log(coche[0].coches[1].nombre);
-    console.log(coche[0].coches[1].descripcion);
+    console.log(coche.response[1].name);
+    console.log(coche.response[1].description);
+    console.log(coche.response[1].image);
     
-    console.log(coche[0].coches[2].nombre);
-    console.log(coche[0].coches[2].descripcion);
+    console.log(coche.response[2].name);
+    console.log(coche.response[2].description);
+    console.log(coche.response[2].image);
     */
     
     // Mandamos el prompt a la función enviarAMagicLoops que se encargará de llamar a la API
@@ -96,14 +100,11 @@ async function enviarAMagicLoops(prompt) {
         }, 500);
         
         /*####################    LLAMADA A LA API PARA LA IA      #########################*/
-        const url = 'https://magicloops.dev/api/loop/45fcf5c6-3233-4b2f-9221-aec31289a5cf/run';
-        
+        const url = 'https://magicloops.dev/api/loop/66e62c02-fcb1-49dc-a75f-4ec23717745e/run';
+
         const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ "prompt": prompt })
+        method: 'POST',
+        body: JSON.stringify({ "prompt": "SUV, 4WD, spacious, fuel-efficient" }),
         });
         
         if (!response.ok) {
@@ -136,27 +137,32 @@ async function enviarAMagicLoops(prompt) {
         obj_coches = responseJson;
         
         // DEBUG PARA VER LOS DISTINTOS COCHES EN CONSOLA
-        console.log(obj_coches.coches[0].nombre);
-        console.log(obj_coches.coches[0].descripcion);
+        console.log(obj_coches.response[0].name);
+        console.log(obj_coches.response[0].description);
         
-        console.log(obj_coches.coches[1].nombre);
-        console.log(obj_coches.coches[1].descripcion);
+        console.log(obj_coches.response[1].name);
+        console.log(obj_coches.response[1].description);
         
-        console.log(obj_coches.coches[2].nombre);
-        console.log(obj_coches.coches[2].descripcion);
+        console.log(obj_coches.response[2].name);
+        console.log(obj_coches.response[2].description);
         
         // Muestra con una tabla los 3 coches más recomendados
         $("#resultados").html(`
             <table class="tabla-resultados">
             <tr>
-                <th><strong>` + obj_coches.coches[0].nombre + `</strong></th>
-                <th><strong>` + obj_coches.coches[1].nombre + `</strong></th>
-                <th><strong>` + obj_coches.coches[2].nombre + `</strong></th>
+                <th><strong>` + obj_coches.response[0].name + `</strong></th>
+                <th><strong>` + obj_coches.response[1].name + `</strong></th>
+                <th><strong>` + obj_coches.response[2].name + `</strong></th>
             </tr>
             <tr>
-                <td>` + obj_coches.coches[0].descripcion + `</td>
-                <td>` + obj_coches.coches[1].descripcion + `</td>
-                <td>` + obj_coches.coches[2].descripcion + `</td>
+                <td>` + obj_coches.response[0].description + `</td>
+                <td>` + obj_coches.response[1].description + `</td>
+                <td>` + obj_coches.response[2].description + `</td>
+            </tr>
+            <tr>
+                <td><img src='` + obj_coches.response[0].image + `'></td>
+                <td><img src='` + obj_coches.response[1].image + `'></td>
+                <td><img src='` + obj_coches.response[2].image + `'></td>
             </tr>
             </table>
         `);
