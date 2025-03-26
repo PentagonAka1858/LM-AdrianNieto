@@ -48,22 +48,22 @@ function mostrarResultado(event){
     //  EJEMPLO DE RESPUESTA API DE MAGICLOOPS PARA DEPURACIÓN
     /*
         const coche = {
-        "response": [
-            {
-            "name": "Toyota RAV4 Hybrid",
-            "description": "A compact SUV with a spacious interior, 4WD capability, and excellent fuel efficiency thanks to its hybrid engine.",
-            "image": "https://example.com/toyota-rav4-hybrid.jpg"
-            },
-            {
-            "name": "Honda CR-V Hybrid",
-            "description": "A popular SUV known for its roomy cabin, 4WD option, and impressive fuel economy, making it a great choice for families.",
-            "image": "https://example.com/honda-cr-v-hybrid.jpg"
-            },
-            {
-            "name": "Subaru Outback",
-            "description": "A versatile SUV offering 4WD, ample cargo space, and good fuel efficiency, perfect for adventurous trips.",
-            "image": "https://example.com/subaru-outback.jpg"
-            }
+                [
+        {
+            "name": "Toyota RAV4",
+            "description": "A versatile and reliable compact SUV that offers ample interior space, advanced safety features, and the capability of all-wheel drive for diverse driving conditions.",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqmzhn2HV2i06wEO7eIoE8S1ZRCLhQYxjK7K6y_7utZeXKiVXzrHfoRaDfwg&s"
+        },
+        {
+            "name": "Subaru Forester",
+            "description": "A compact SUV well-known for its excellent all-wheel-drive system, spacious passenger room, and impressive off-road capabilities, making it ideal for adventure seekers.",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUQ7qtdZsE-YZMPPPwJ-lZsJPsIosyEqz9TUPc4J8pZ2n3-vwt9m2szbvx5w&s"
+        },
+        {
+            "name": "Honda CR-V",
+            "description": "A popular SUV combining comfort, practicality, and fuel efficiency, featuring a roomy interior with plenty of cargo space, and available all-wheel drive for enhanced traction.",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuhMHrQu4_HooQ0FfOAF44-gUpUnHKi-tHPOtLhOfQW8knTXKlcBi-gqKcHQ&s"
+        }
         ]
         }
         
@@ -104,7 +104,7 @@ async function enviarAMagicLoops(prompt) {
 
         const response = await fetch(url, {
         method: 'POST',
-        body: JSON.stringify({ "prompt": "SUV, 4WD, spacious, fuel-efficient" }),
+        body: JSON.stringify({ "prompt": prompt }),
         });
         
         if (!response.ok) {
@@ -137,32 +137,32 @@ async function enviarAMagicLoops(prompt) {
         obj_coches = responseJson;
         
         // DEBUG PARA VER LOS DISTINTOS COCHES EN CONSOLA
-        console.log(obj_coches.response[0].name);
-        console.log(obj_coches.response[0].description);
+        console.log(obj_coches[0].name);
+        console.log(obj_coches[0].description);
         
-        console.log(obj_coches.response[1].name);
-        console.log(obj_coches.response[1].description);
+        console.log(obj_coches[1].name);
+        console.log(obj_coches[1].description);
         
-        console.log(obj_coches.response[2].name);
-        console.log(obj_coches.response[2].description);
+        console.log(obj_coches[2].name);
+        console.log(obj_coches[2].description);
         
         // Muestra con una tabla los 3 coches más recomendados
         $("#resultados").html(`
             <table class="tabla-resultados">
             <tr>
-                <th><strong>` + obj_coches.response[0].name + `</strong></th>
-                <th><strong>` + obj_coches.response[1].name + `</strong></th>
-                <th><strong>` + obj_coches.response[2].name + `</strong></th>
+                <th><strong>` + obj_coches[0].name + `</strong></th>
+                <th><strong>` + obj_coches[1].name + `</strong></th>
+                <th><strong>` + obj_coches[2].name + `</strong></th>
             </tr>
             <tr>
-                <td>` + obj_coches.response[0].description + `</td>
-                <td>` + obj_coches.response[1].description + `</td>
-                <td>` + obj_coches.response[2].description + `</td>
+                <td>` + obj_coches[0].description + `</td>
+                <td>` + obj_coches[1].description + `</td>
+                <td>` + obj_coches[2].description + `</td>
             </tr>
             <tr>
-                <td><img src='` + obj_coches.response[0].image + `'></td>
-                <td><img src='` + obj_coches.response[1].image + `'></td>
-                <td><img src='` + obj_coches.response[2].image + `'></td>
+                <td><img src='` + obj_coches[0].image + `'></td>
+                <td><img src='` + obj_coches[1].image + `'></td>
+                <td><img src='` + obj_coches[2].image + `'></td>
             </tr>
             </table>
         `);
