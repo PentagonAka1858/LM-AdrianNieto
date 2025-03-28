@@ -160,9 +160,9 @@ async function enviarAMagicLoops(prompt) {
                 <td>` + obj_coches[2].description + `</td>
             </tr>
             <tr>
-                <td><img src='` + obj_coches[0].image + `'></td>
-                <td><img src='` + obj_coches[1].image + `'></td>
-                <td><img src='` + obj_coches[2].image + `'></td>
+                <td><img style="display:block;" width="100%" height="100%" src='` + obj_coches[0].image + `'></td>
+                <td><img style="display:block;" width="100%" height="100%" src='` + obj_coches[1].image + `'></td>
+                <td><img style="display:block;" width="100%" height="100%" src='` + obj_coches[2].image + `'></td>
             </tr>
             </table>
         `);
