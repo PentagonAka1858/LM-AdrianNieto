@@ -15,21 +15,28 @@ function mostrarResultado(event){
     
     // Creamos un array para guardar los valores marcados
     let valoresMarcados = [];
+    let precioTotal = 0;
     
     // CAda checkbox y radio marcado, será "Pusheado" o empujado a "valoresMarcados"
     $('input:checkbox:checked, input:radio:checked').each(function() {
         // Guardamos en una variable el texto que hay en los label que tienen el parametro
         // for igual que el id del checkbox/radio
-        let textoLabel = $("label[for='" + $(this).attr('id') + "']").text();
+        let textoLabel = $("label[for='" + $(this).attr('id') + "']");
+        // Eliminamos el precio del texto
+        textoLabel.find(".precio").remove();
+        // Guardamos el texto y le eliminamos los espacios
+        textoLabel = textoLabel.text().trim();
         // Empujamos la variable anterior al array de valores seleccionados
         valoresMarcados.push(textoLabel);
+        // Calculamos el precio total
+        precioTotal = precioTotal + parseInt($(this).attr('value'));
     });
     
     // Mostramos el resultado en la consola para depuración
     console.log("Selected values:", valoresMarcados);
     
     // Guardamos en una variable los valores seleccionados separados con una ,
-    let resultHtml = "<p>Selected options: " + valoresMarcados.join(", ") + "</p>";
+//    let resultHtml = "<p>Selected options: " + valoresMarcados.join(", ") + "</p>";
     
     // La siguiente linea se puede descomentar para mostrar al usuario los valores seleccionados al final del documento
 //    $('body').append(resultHtml);
@@ -44,7 +51,10 @@ function mostrarResultado(event){
     
     // Para depuración, mostramos el prompt que pasará a la IA automaticamente
     console.log("Prompt:", prompt);
-
+    
+    // Mostramos el precio total para depuración
+    console.log("Precio total:", precioTotal);
+    
     //  EJEMPLO DE RESPUESTA API DE MAGICLOOPS PARA DEPURACIÓN
     /*
         const coche = {
@@ -83,12 +93,12 @@ function mostrarResultado(event){
     */
     
     // Mandamos el prompt a la función enviarAMagicLoops que se encargará de llamar a la API
-    enviarAMagicLoops(prompt);
+    enviarAMagicLoops(prompt, manualPrompt, precioTotal);
 
 }
 
 // Usamos una función asincrona para poder esperar a que se resuelva la petición de la API
-async function enviarAMagicLoops(prompt) {
+async function enviarAMagicLoops(prompt, manualPrompt, precioTotal) {
     // Usamos un bloque try/catch para controlar errores que puedan ocurrir
     try {
         // Mostramos un mensaje de que se está procesando la solicitud de la API
@@ -150,6 +160,12 @@ async function enviarAMagicLoops(prompt) {
         $("#resultados").html(`
             <table class="tabla-resultados">
             <tr>
+                <th colspan="3">Precio estimado</td>
+            </tr>
+            <tr>
+                <td colspan="3"> ` + precioTotal + `€ </td>
+            </tr>
+            <tr>
                 <th><strong>` + obj_coches[0].name + `</strong></th>
                 <th><strong>` + obj_coches[1].name + `</strong></th>
                 <th><strong>` + obj_coches[2].name + `</strong></th>
@@ -176,6 +192,8 @@ async function enviarAMagicLoops(prompt) {
         console.error('Error:', error);
         $("#resultados").html(`
             <p class="mensaje-error">Error al procesar la solicitud: ${error.message}</p>
+            <p class="mensaje-error"> Precio aproximado: ` + precioTotal + `€ </p>
+            <p class="mensaje-error"> Introduce el siguiente mensaje a una IA para recibir resultados: <br><br>` + manualPrompt + ` </p>
         `);
         
         // Deslizar el cursor hasta abajo

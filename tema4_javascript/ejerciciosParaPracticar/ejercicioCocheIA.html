@@ -68,7 +68,13 @@
             border: 1px solid #f5c6cb;
             border-radius: 5px;
         }
-
+        
+        .precio {
+            font-size: 0.85em;
+            color: #666;
+            margin-left: 5px;
+        }
+        
         .pretty-json { /* EN CASO DE ERROR AL FORMATEAR, INTENTAMOS FORMATEAR EL JSON LANZADO */
             white-space: pre-wrap;
             word-wrap: break-word;
@@ -87,25 +93,24 @@
 <body>
     <h1>Selección de Características del Vehículo</h1>
     <form>
-
         <div class="seccion-formulario">
             <h3>Tipo de motor</h3>
             <div class="grupo-opciones">
                 <div class="opcion-concreta">
-                    <input type="radio" id="gasolina" name="motor" value="gasolina">
-                    <label for="gasolina">Gasolina</label>
+                    <input type="radio" id="gasolina" name="motor" value="20000">
+                    <label for="gasolina">Gasolina <span class="precio">(€20,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="diesel" name="motor" value="diesel">
-                    <label for="diesel">Diésel</label>
+                    <input type="radio" id="diesel" name="motor" value="23000">
+                    <label for="diesel">Diésel <span class="precio">(€23,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="hibrido" name="motor" value="hibrido">
-                    <label for="hibrido">Híbrido</label>
+                    <input type="radio" id="hibrido" name="motor" value="28000">
+                    <label for="hibrido">Híbrido <span class="precio">(€28,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="electrico" name="motor" value="electrico">
-                    <label for="electrico">Eléctrico</label>
+                    <input type="radio" id="electrico" name="motor" value="35000">
+                    <label for="electrico">Eléctrico <span class="precio">(€35,000)</span></label>
                 </div>
             </div>
         </div>
@@ -115,20 +120,20 @@
             <h3>Transmisión</h3>
             <div class="grupo-opciones">
                 <div class="opcion-concreta">
-                    <input type="radio" id="manual" name="transmision" value="manual">
-                    <label for="manual">Manual</label>
+                    <input type="radio" id="manual" name="transmision" value="0">
+                    <label for="manual">Manual <span class="precio">(€0)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="automatica" name="transmision" value="automatica">
-                    <label for="automatica">Automática</label>
+                    <input type="radio" id="automatica" name="transmision" value="2000">
+                    <label for="automatica">Automática <span class="precio">(€2,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="cvt" name="transmision" value="cvt">
-                    <label for="cvt">CVT</label>
+                    <input type="radio" id="cvt" name="transmision" value="2500">
+                    <label for="cvt">CVT <span class="precio">(€2,500)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="doble_embrague" name="transmision" value="doble_embrague">
-                    <label for="doble_embrague">Doble embrague</label>
+                    <input type="radio" id="doble_embrague" name="transmision" value="3000">
+                    <label for="doble_embrague">Doble embrague <span class="precio">(€3,000)</span></label>
                 </div>
             </div>
         </div>
@@ -137,16 +142,16 @@
             <h3>Tracción</h3>
             <div class="grupo-opciones">
                 <div class="opcion-concreta">
-                    <input type="radio" id="fwd" name="traccion" value="fwd">
-                    <label for="fwd">Delantera (FWD)</label>
+                    <input type="radio" id="fwd" name="traccion" value="0">
+                    <label for="fwd">Delantera (FWD) <span class="precio">(€0)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="rwd" name="traccion" value="rwd">
-                    <label for="rwd">Trasera (RWD)</label>
+                    <input type="radio" id="rwd" name="traccion" value="2000">
+                    <label for="rwd">Trasera (RWD) <span class="precio">(€2,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="awd" name="traccion" value="awd">
-                    <label for="awd">Total o integral (AWD, 4x4)</label>
+                    <input type="radio" id="awd" name="traccion" value="3500">
+                    <label for="awd">Total o integral (AWD, 4x4) <span class="precio">(€3,500)</span></label>
                 </div>
             </div>
         </div>
@@ -155,36 +160,36 @@
             <h3>Tipo de carrocería</h3>
             <div class="grupo-opciones">
                 <div class="opcion-concreta">
-                    <input type="radio" id="sedan" name="carroceria" value="sedan">
-                    <label for="sedan">Sedán</label>
+                    <input type="radio" id="sedan" name="carroceria" value="25000">
+                    <label for="sedan">Sedán <span class="precio">(€25,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="hatchback" name="carroceria" value="hatchback">
-                    <label for="hatchback">Hatchback</label>
+                    <input type="radio" id="hatchback" name="carroceria" value="22000">
+                    <label for="hatchback">Hatchback <span class="precio">(€22,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="suv" name="carroceria" value="suv">
-                    <label for="suv">SUV</label>
+                    <input type="radio" id="suv" name="carroceria" value="32000">
+                    <label for="suv">SUV <span class="precio">(€32,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="coupe" name="carroceria" value="coupe">
-                    <label for="coupe">Coupé</label>
+                    <input type="radio" id="coupe" name="carroceria" value="35000">
+                    <label for="coupe">Coupé <span class="precio">(€35,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="cabrio" name="carroceria" value="cabrio">
-                    <label for="cabrio">Cabrio/Descapotable</label>
+                    <input type="radio" id="cabrio" name="carroceria" value="45000">
+                    <label for="cabrio">Cabrio/Descapotable <span class="precio">(€45,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="familiar" name="carroceria" value="familiar">
-                    <label for="familiar">Familiar</label>
+                    <input type="radio" id="familiar" name="carroceria" value="28000">
+                    <label for="familiar">Familiar <span class="precio">(€28,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="pickup" name="carroceria" value="pickup">
-                    <label for="pickup">Pick-up</label>
+                    <input type="radio" id="pickup" name="carroceria" value="38000">
+                    <label for="pickup">Pick-up <span class="precio">(€38,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="monovolumen" name="carroceria" value="monovolumen">
-                    <label for="monovolumen">Monovolumen</label>
+                    <input type="radio" id="monovolumen" name="carroceria" value="35000">
+                    <label for="monovolumen">Monovolumen <span class="precio">(€35,000)</span></label>
                 </div>
             </div>
         </div>
@@ -193,20 +198,20 @@
             <h3>Número de puertas</h3>
             <div class="grupo-opciones">
                 <div class="opcion-concreta">
-                    <input type="radio" id="puertas2" name="puertas" value="2">
-                    <label for="puertas2">2 puertas</label>
+                    <input type="radio" id="puertas2" name="puertas" value="0">
+                    <label for="puertas2">2 puertas <span class="precio">(€0)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="puertas3" name="puertas" value="3">
-                    <label for="puertas3">3 puertas</label>
+                    <input type="radio" id="puertas3" name="puertas" value="800">
+                    <label for="puertas3">3 puertas <span class="precio">(€800)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="puertas4" name="puertas" value="4">
-                    <label for="puertas4">4 puertas</label>
+                    <input type="radio" id="puertas4" name="puertas" value="1200">
+                    <label for="puertas4">4 puertas <span class="precio">(€1,200)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="puertas5" name="puertas" value="5">
-                    <label for="puertas5">5 puertas</label>
+                    <input type="radio" id="puertas5" name="puertas" value="1500">
+                    <label for="puertas5">5 puertas <span class="precio">(€1,500)</span></label>
                 </div>
             </div>
         </div>
@@ -215,20 +220,20 @@
             <h3>Número de plazas</h3>
             <div class="grupo-opciones">
                 <div class="opcion-concreta">
-                    <input type="radio" id="plazas2" name="plazas" value="2">
-                    <label for="plazas2">2 plazas</label>
+                    <input type="radio" id="plazas2" name="plazas" value="0">
+                    <label for="plazas2">2 plazas <span class="precio">(€0)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="plazas4" name="plazas" value="4">
-                    <label for="plazas4">4 plazas</label>
+                    <input type="radio" id="plazas4" name="plazas" value="1500">
+                    <label for="plazas4">4 plazas <span class="precio">(€1,500)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="plazas5" name="plazas" value="5">
-                    <label for="plazas5">5 plazas</label>
+                    <input type="radio" id="plazas5" name="plazas" value="2000">
+                    <label for="plazas5">5 plazas <span class="precio">(€2,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="radio" id="plazas7" name="plazas" value="7">
-                    <label for="plazas7">7 plazas o más</label>
+                    <input type="radio" id="plazas7" name="plazas" value="4000">
+                    <label for="plazas7">7 plazas o más <span class="precio">(€4,000)</span></label>
                 </div>
             </div>
         </div>
@@ -237,28 +242,28 @@
             <h3>Equipamiento tecnológico</h3>
             <div class="grupo-checkbox">
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="pantalla_tactil" name="tecnologia" value="pantalla_tactil">
-                    <label for="pantalla_tactil">Pantalla táctil</label>
+                    <input type="checkbox" id="pantalla_tactil" name="tecnologia" value="800">
+                    <label for="pantalla_tactil">Pantalla táctil <span class="precio">(€800)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="gps" name="tecnologia" value="gps">
-                    <label for="gps">Sistema de navegación GPS</label>
+                    <input type="checkbox" id="gps" name="tecnologia" value="1200">
+                    <label for="gps">Sistema de navegación GPS <span class="precio">(€1,200)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="android_apple" name="tecnologia" value="android_apple">
-                    <label for="android_apple">Android Auto/Apple CarPlay</label>
+                    <input type="checkbox" id="android_apple" name="tecnologia" value="500">
+                    <label for="android_apple">Android Auto/Apple CarPlay <span class="precio">(€500)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="cargador_inalambrico" name="tecnologia" value="cargador_inalambrico">
-                    <label for="cargador_inalambrico">Cargador inalámbrico</label>
+                    <input type="checkbox" id="cargador_inalambrico" name="tecnologia" value="300">
+                    <label for="cargador_inalambrico">Cargador inalámbrico <span class="precio">(€300)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="asistente_voz" name="tecnologia" value="asistente_voz">
-                    <label for="asistente_voz">Asistente de voz</label>
+                    <input type="checkbox" id="asistente_voz" name="tecnologia" value="600">
+                    <label for="asistente_voz">Asistente de voz <span class="precio">(€600)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="cuadro_digital" name="tecnologia" value="cuadro_digital">
-                    <label for="cuadro_digital">Cuadro de instrumentos digital</label>
+                    <input type="checkbox" id="cuadro_digital" name="tecnologia" value="1300">
+                    <label for="cuadro_digital">Cuadro de instrumentos digital <span class="precio">(€1,300)</span></label>
                 </div>
             </div>
         </div>
@@ -267,28 +272,28 @@
             <h3>Sistemas de seguridad y asistencia</h3>
             <div class="grupo-checkbox">
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="frenado_emergencia" name="seguridad" value="frenado_emergencia">
-                    <label for="frenado_emergencia">Frenado autónomo de emergencia</label>
+                    <input type="checkbox" id="frenado_emergencia" name="seguridad" value="1000">
+                    <label for="frenado_emergencia">Frenado autónomo de emergencia <span class="precio">(€1,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="control_crucero" name="seguridad" value="control_crucero">
-                    <label for="control_crucero">Control de crucero adaptativo</label>
+                    <input type="checkbox" id="control_crucero" name="seguridad" value="1200">
+                    <label for="control_crucero">Control de crucero adaptativo <span class="precio">(€1,200)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="asistente_carril" name="seguridad" value="asistente_carril">
-                    <label for="asistente_carril">Asistente de mantenimiento de carril</label>
+                    <input type="checkbox" id="asistente_carril" name="seguridad" value="800">
+                    <label for="asistente_carril">Asistente de mantenimiento de carril <span class="precio">(€800)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="camara_360" name="seguridad" value="camara_360">
-                    <label for="camara_360">Cámara 360°</label>
+                    <input type="checkbox" id="camara_360" name="seguridad" value="1500">
+                    <label for="camara_360">Cámara 360° <span class="precio">(€1,500)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="sensores_aparcamiento" name="seguridad" value="sensores_aparcamiento">
-                    <label for="sensores_aparcamiento">Sensores de aparcamiento</label>
+                    <input type="checkbox" id="sensores_aparcamiento" name="seguridad" value="600">
+                    <label for="sensores_aparcamiento">Sensores de aparcamiento <span class="precio">(€600)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="detector_angulo" name="seguridad" value="detector_angulo">
-                    <label for="detector_angulo">Detector de ángulo muerto</label>
+                    <input type="checkbox" id="detector_angulo" name="seguridad" value="700">
+                    <label for="detector_angulo">Detector de ángulo muerto <span class="precio">(€700)</span></label>
                 </div>
             </div>
         </div>
@@ -297,24 +302,24 @@
             <h3>Confort y extras</h3>
             <div class="grupo-checkbox">
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="climatizador" name="confort" value="climatizador">
-                    <label for="climatizador">Climatizador automático</label>
+                    <input type="checkbox" id="climatizador" name="confort" value="900">
+                    <label for="climatizador">Climatizador automático <span class="precio">(€900)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="asientos_calefactados" name="confort" value="asientos_calefactados">
-                    <label for="asientos_calefactados">Asientos calefactados/ventilados</label>
+                    <input type="checkbox" id="asientos_calefactados" name="confort" value="1200">
+                    <label for="asientos_calefactados">Asientos calefactados/ventilados <span class="precio">(€1,200)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="tapiceria_cuero" name="confort" value="tapiceria_cuero">
-                    <label for="tapiceria_cuero">Tapicería de cuero</label>
+                    <input type="checkbox" id="tapiceria_cuero" name="confort" value="2000">
+                    <label for="tapiceria_cuero">Tapicería de cuero <span class="precio">(€2,000)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="techo_panoramico" name="confort" value="techo_panoramico">
-                    <label for="techo_panoramico">Techo panorámico</label>
+                    <input type="checkbox" id="techo_panoramico" name="confort" value="1800">
+                    <label for="techo_panoramico">Techo panorámico <span class="precio">(€1,800)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="iluminacion_led" name="confort" value="iluminacion_led">
-                    <label for="iluminacion_led">Iluminación ambiental LED</label>
+                    <input type="checkbox" id="iluminacion_led" name="confort" value="600">
+                    <label for="iluminacion_led">Iluminación ambiental LED <span class="precio">(€600)</span></label>
                 </div>
             </div>
         </div>
@@ -323,20 +328,20 @@
             <h3>Opciones de personalización</h3>
             <div class="grupo-checkbox">
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="colores_carroceria" name="personalizacion" value="colores_carroceria">
-                    <label for="colores_carroceria">Colores de carrocería</label>
+                    <input type="checkbox" id="colores_carroceria" name="personalizacion" value="800">
+                    <label for="colores_carroceria">Colores de carrocería <span class="precio">(€800)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="tipos_llantas" name="personalizacion" value="tipos_llantas">
-                    <label for="tipos_llantas">Tipos de llantas y tamaños</label>
+                    <input type="checkbox" id="tipos_llantas" name="personalizacion" value="1200">
+                    <label for="tipos_llantas">Tipos de llantas y tamaños <span class="precio">(€1,200)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="accesorios_deportivos" name="personalizacion" value="accesorios_deportivos">
-                    <label for="accesorios_deportivos">Accesorios deportivos</label>
+                    <input type="checkbox" id="accesorios_deportivos" name="personalizacion" value="2500">
+                    <label for="accesorios_deportivos">Accesorios deportivos <span class="precio">(€2,500)</span></label>
                 </div>
                 <div class="opcion-concreta">
-                    <input type="checkbox" id="paquetes_equipamiento" name="personalizacion" value="paquetes_equipamiento">
-                    <label for="paquetes_equipamiento">Paquetes de equipamiento</label>
+                    <input type="checkbox" id="paquetes_equipamiento" name="personalizacion" value="3500">
+                    <label for="paquetes_equipamiento">Paquetes de equipamiento <span class="precio">(€3,500)</span></label>
                 </div>
             </div>
         </div>
