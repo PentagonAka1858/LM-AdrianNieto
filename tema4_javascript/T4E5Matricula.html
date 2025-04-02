@@ -114,7 +114,7 @@
         2.- Controlamos la entrada de teclado y usamos el atributo onkeydown
             EJEMPLO: onkeydown="comprobarEnter(event);"
         -->
-    <form onkeydown="comprobarEnter(event);">
+    <form onsubmit="return false;">
         <h1>Generales</h1>
         Horas semanales:
         <input type="number" id="horas" min="1" max="30" value="10"><br>
