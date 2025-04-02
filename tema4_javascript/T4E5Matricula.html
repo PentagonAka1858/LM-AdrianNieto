@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario matrícula</title>
-    <script>
-        
-    </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="./ejerciciosParaPracticar/basico.css">
 </head>
 <body>
     <!--
@@ -24,15 +23,103 @@
     El precio final mensual debe aparecer en un div.
     -->
     <script>
+        
+        // Iniciamos la función inicio al cargar el documento
+        $(inicio);
+        
+        // Función base
+        function inicio(){
+            // En caso de pulsar una tecla en el input de horas:
+            $("#horas").keypress(function(event) {
+                // Si es la tecla 13 o Enter
+                if (event.which == 13) {
+                    // Ejecutamos calcular
+                    calcular();
+                }
+            });
+        }
+        
+        function comprobarEnter(event){
+            if (event.which == 13) {
+                // Ejecutamos calcular
+                calcular();
+            }
+        }
+        
         function calcular(){
+            // Eliminamos el display:none; del estilo del resultado, 2 formas de hacerlo:
+            // Eliminando unicamente la propiedad del estilo:
+//          $("#resultado").prop("style").removeProperty("display");
+            // o eliminando el atributo "style" directamente:
+            $("#resultado").removeAttr("style");
             
+            let precioFinal = 0; // Guarda el precio final
+            let mensaje = ""; // Mensaje que mostrará el resultado
+            
+            // Comprobamos que si Matemáticas 1 no está marcada pero Matemáticas 2 sí, envíe mensaje de error
+            if (!$("#mat1").prop("checked") && $("#mat2").prop("checked")){
+                // Le damos al div la clase de error y eliminamos correcto
+                $("#resultado").removeClass("correcto");
+                $("#resultado").addClass("error");
+                // Guardamos en el mensaje el error
+                mensaje = `<p>Error: no se puede elegir Matemáticas II sin elegir Matemáticas I</p>`
+            // En caso de no existir el error anterior, comprobamos que las horas está entre los valores establecidos (entre 1 y 30 horas semanales)
+            } else if ($("#horas").val() < 1 || $("#horas").val() > 30){
+                // Le damos al div la clase de error y eliminamos correcto
+                $("#resultado").removeClass("correcto");
+                $("#resultado").addClass("error");
+                // Guardamos en el mensaje el error
+                mensaje = `<p>Error: solo se pueden cursar entre 0 y 30 horas semanales</p>`
+            // En caso de que no haya errores
+            } else {
+                // Eliminamos la clase error y añadimos al div la clase correcto
+                $("#resultado").removeClass("error");
+                $("#resultado").addClass("correcto");
+                
+                // Recibimos el precio completo del input de horas semanales y multiplicamos por 20€ cada hora
+                let precioCompleto = parseInt($("#horas").val())*20;
+                // Asignamos el precio final como el precio completo
+                precioFinal = precioCompleto;
+                
+                // Si el checkbox de beca está marcado:
+                if($("#beca").prop("checked")){
+                    // El precio final solo será un 20% del total
+                    precioFinal = precioCompleto*0.2;
+                    // Guardamos el mensaje con la información del precio
+                    mensaje = "Total " + precioCompleto + " €, pero al tener beca se paga un 20% del precio, quedando en " + precioFinal + " €<br>";
+                }
+                if ($("#si_antiguo").prop("checked")){
+                    // Creamos un mensaje que sea el anterior (por si existe beca) y los calculos de los precios
+                    mensaje = mensaje 
+                    + "Se descuentan " + (precioFinal*0.35) + " € del precio (" + precioFinal + " €), quedando en " + (precioFinal*0.65) + " €";
+                    // Calculamos el precio final como el 65% del precio anterior (con el descuento de la beca, si existe)
+                    precioFinal = precioFinal*0.65;
+                }
+                
+                // Creamos el mensaje del calculo del precio
+                mensaje = `<h1>Calculo precio</h1>`
+                    + mensaje
+                    + `<h1>Precio final</h1>`
+                    + precioFinal
+                    + ` € mensuales`
+            }
+            
+            // Mostramos el mensaje final en el div resultado
+            $("#resultado").html(mensaje);
         }
     </script>
-    <form>
+    <!-- Dos formas para que el formulario no refresque al darle enter:
+        1.- Aplicamos el atributo onsubmit para que no refresque la pagina al pulsar Enter en el formulario
+            EJEMPLO: onsubmit="return false;" 
+        2.- Controlamos la entrada de teclado y usamos el atributo onkeydown
+            EJEMPLO: onkeydown="comprobarEnter(event);"
+        -->
+    <form onkeydown="comprobarEnter(event);">
         <h1>Generales</h1>
         Horas semanales:
         <input type="number" id="horas" min="1" max="30" value="10"><br>
-        <input type="radio" name="antalumno" id="si_antiguo">Antiguo alumno<br>
+        <input type="checkbox" name="beca" id="beca" >Beca<br>
+        <input type="radio" name="antalumno" id="si_antiguo" checked>Antiguo alumno<br>
         <input type="radio" name="antalumno" id="no_antiguo">Nuevo alumno<br>
         
         <h1>Primero</h1>
@@ -42,10 +129,10 @@
         <h1>Segundo</h1>
         <input type="checkbox" id="mat2">Matemáticas II<br>
         <input type="checkbox" id="fis">Física<br>
-        
-        <button onclick="calcular();">Calcular precio</button>
+        <!-- Se debe usar type="button" o darle una acción al formulario (action="#") para que no refresque la página al pulsar el botón-->
+        <button type="button" onclick="calcular();" onkeypress="clickPress(event)">Calcular precio</button>
     </form>
-    <div id="resultado">
+    <div id="resultado" style="display:none;">
         
     </div>
 </body>
