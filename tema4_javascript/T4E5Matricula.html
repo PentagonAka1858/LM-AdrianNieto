@@ -31,12 +31,15 @@
         function inicio(){
             // En caso de pulsar una tecla en el input de horas:
             $("#horas").keypress(function(event) {
-                // Si es la tecla 13 o Enter
-                if (event.which == 13) {
-                    // Ejecutamos calcular
-                    calcular();
-                }
+                comprobarEnter();
             });
+            
+            $(document).on('submit', 'form', function(e){
+                e.preventDefault();
+                comprobarEnter();
+                return;
+            });
+            
         }
         
         function comprobarEnter(event){
@@ -114,7 +117,7 @@
         2.- Controlamos la entrada de teclado y usamos el atributo onkeydown
             EJEMPLO: onkeydown="comprobarEnter(event);"
         -->
-    <form onsubmit="return false;">
+    <form>
         <h1>Generales</h1>
         Horas semanales:
         <input type="number" id="horas" min="1" max="30" value="10"><br>
