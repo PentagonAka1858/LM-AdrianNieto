@@ -90,16 +90,16 @@
                     // El precio final solo será un 20% del total
                     precioFinal = precioCompleto*0.2;
                     // Guardamos el mensaje con la información del precio
-                    mensaje = "Total " + precioCompleto 
+                    mensaje = "Total " + precioCompleto.toFixed(2) 
                     + " €, pero al tener beca se paga un 20% del precio, quedando en " 
-                    + precioFinal + " €<br>";
+                    + precioFinal.toFixed(2) + " €<br>";
                 }
                 if ($("#si_antiguo").prop("checked")){
                     // Creamos un mensaje que sea el anterior (por si existe beca) y los calculos de los precios
                     mensaje = mensaje 
-                    + "Se descuentan " + (precioFinal*0.35) 
-                    + " € del precio (" + precioFinal + " €), quedando en "
-                    + (precioFinal*0.65) + " €";
+                    + "Se descuentan " + (precioFinal*0.35).toFixed(2) 
+                    + " € del precio (" + precioFinal.toFixed(2) + " €), quedando en "
+                    + (precioFinal*0.65).toFixed(2) + " €";
                     // Calculamos el precio final como el 65% del precio anterior (con el descuento de la beca, si existe)
                     precioFinal = precioFinal*0.65;
                 }
@@ -108,8 +108,8 @@
                 mensaje = `<h1>Calculo precio</h1>`
                     + mensaje
                     + `<h1>Precio final</h1>`
-                    + precioFinal
-                    + ` € mensuales`
+                    + precioFinal.toFixed(2)
+                    + ` € mensuales`;
             }
             
             // Mostramos el mensaje final en el div resultado
