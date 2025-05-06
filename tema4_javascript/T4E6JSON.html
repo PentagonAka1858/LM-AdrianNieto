@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Práctica T4E6 Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        // Se debe esperar a que cargue el DOM para que 
+        // el script no acceda a elementos que aún no existen
+        // como por ejemplo en este caso tbody.
+        document.addEventListener("DOMContentLoaded", function() {
+            const empleados = {
+            "Employee": [
+                {
+                    "Name": "Juan Pérez",
+                    "Age": 35,
+                    "Position": "Senior Developer",
+                    "Department": "Technology",
+                    "Salary": 75000,
+                    "Location": "Madrid, Spain"
+                },
+                {
+                    "Name": "María Rodriguez",
+                    "Age": 28,
+                    "Position": "Graphic Designer",
+                    "Department": "Design",
+                    "Salary": 60000,
+                    "Location": "Paris, France"
+                },
+                {
+                    "Name": "Carlos Gómez",
+                    "Age": 40,
+                    "Position": "Project Manager",
+                    "Department": "Project Management",
+                    "Salary": 90000,
+                    "Location": "Berlin, Germany"
+                }
+            ]
+            };
+            // Seleccionamos el elemento tbody de #employeeTable
+            // y lo guardamos en la variable tbody
+            const tbody = document.querySelector("#employeeTable tbody");
+            // Por cada elemento en el array de Employee
+            // creamos una variable "row" que creará los elementos
+            // del JSON en cada fila.
+            // Luego el HTML interno de tbody se le imprimirá cada fila
+            for (numEmpleado in empleados.Employee){
+                const row = `<tr>
+                    <td>${empleados.Employee[numEmpleado].Name}</td>
+                    <td>${empleados.Employee[numEmpleado].Age}</td>
+                    <td>${empleados.Employee[numEmpleado].Position}</td>
+                    <td>${empleados.Employee[numEmpleado].Department}</td>
+                    <td>${empleados.Employee[numEmpleado].Salary}</td>
+                    <td>${empleados.Employee[numEmpleado].Location}</td>
+                </tr>`;
+                tbody.innerHTML += row;
+            }
+        });
+    </script>
+    <table id="employeeTable" border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Position</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dato de ejemplo
+            <tr>
+                <td> columna 1 dato 1 </td>
+            </tr>
+            -->
+        </tbody>
+    </table>
+</body>
+</html>
