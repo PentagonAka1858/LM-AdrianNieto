@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota de examen JS</title>
+</head>
+<body>
+    
+    <script>
+        function calcularPuntosPorPregunta(){
+            
+            // Mostramos todos los divs con clase "resultado"
+            const resultados = document.getElementsByClassName("resultado");
+            for (let cadaClase of resultados) {
+                cadaClase.removeAttribute("hidden");
+            }
+            
+            const totalPreguntas = parseInt(document.getElementById("preguntasMax").value); // Constante para el numero total de preguntas
+            const preguntasAcertadas = parseInt(document.getElementById("aciertos").value); // Constante para el numero de acertadas
+            
+            const puntosPorPregunta = 10 / totalPreguntas; // Puntos por cada pregunta
+            
+            const puntos = preguntasAcertadas * puntosPorPregunta; // Puntos que se han sacado
+            
+            document.getElementById("totalPreguntas").innerHTML = totalPreguntas;
+            
+            document.getElementById("puntosPorPregunta").innerHTML = puntosPorPregunta.toFixed(3);
+            
+            const puntos1hora = puntos;
+            
+            const puntos12horas = puntos - ((totalPreguntas - preguntasAcertadas) * 0.1);
+            
+            const puntos1dia = puntos - ((totalPreguntas - preguntasAcertadas) * 0.2);
+            
+            const puntosSinEntrega = puntos - ((totalPreguntas - preguntasAcertadas) * 0.3);
+            
+            document.getElementById("1hora").innerHTML = puntos1hora.toFixed(3);
+            document.getElementById("12horas").innerHTML = puntos12horas.toFixed(3);
+            document.getElementById("1dia").innerHTML = puntos1dia.toFixed(3);
+            document.getElementById("sinentrega").innerHTML = puntosSinEntrega.toFixed(3);
+            
+        }
+    </script>
+    
+    <!-- 27 preguntas, saber la nota teniendo en cuenta que se resta '0', '0,1', '0,2' y '0,3'  -->
+    
+    <form>
+        <label>Preguntas totales: </label>
+        <input type="number" required min="0" id="preguntasMax">
+        <label>Preguntas acertadas: </label>
+        <input type="number" required min="0" max="27" id="aciertos">
+    </form>
+    <br>
+    <button onclick="calcularPuntosPorPregunta()">Calcular puntos</button>
+    
+    <div class="resultado" hidden>
+        <p>Teniendo en cuenta el total de preguntas, <span id="totalPreguntas"></span>,
+        cada pregunta vale <span id="puntosPorPregunta"></span> puntos, por lo que las puntuaciones serían las siguientes: </p>
+    </div>
+    
+    <div class="resultado">
+        <div>
+            <p>Si se entrega antes de 1 hora tendrás: <span class="puntos" id="1hora"></span></p>
+        </div>
+        <div>
+            <p>Si se entrega entre 1 hora y 12 horas tendrás: <span class="puntos" id="12horas"></span></p>
+        </div>
+        <div>
+            <p>Si se entrega entre 12 horas y 1 día tendrás: <span class="puntos" id="1dia"></span></p>
+        </div>
+        <div>
+            <p>Si no se entrega tendrás: <span class="puntos" id="sinentrega"></span></p>
+        </div>
+    </div>
+    
+</body>
+</html>
