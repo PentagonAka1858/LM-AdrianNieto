@@ -3,6 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        color: #4B0082; /* Morado oscuro */
+        margin: 20px;
+        line-height: 1.6;
+    }
+
+    form {
+        margin-bottom: 20px;
+    }
+
+    label {
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    input[type="number"] {
+        padding: 5px;
+        margin-right: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #800080; /* Púrpura */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background-color: #9932CC; /* Lila más claro */
+    }
+
+    .resultado {
+        background-color: #f9f5fc;
+        border-left: 5px solid #800080;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 6px;
+    }
+
+    .puntos {
+        font-weight: bold;
+        color: #4B0082;
+    }
+    </style>
     <title>Nota de examen JS</title>
 </head>
 <body>
@@ -13,11 +65,34 @@
             // Mostramos todos los divs con clase "resultado"
             const resultados = document.getElementsByClassName("resultado");
             for (let cadaClase of resultados) {
-                cadaClase.removeAttribute("hidden");
+                cadaClase.setAttribute("hidden", true);
             }
             
             const totalPreguntas = parseInt(document.getElementById("preguntasMax").value); // Constante para el numero total de preguntas
             const preguntasAcertadas = parseInt(document.getElementById("aciertos").value); // Constante para el numero de acertadas
+            
+            // Validar entradas
+            if (isNaN(totalPreguntas) || isNaN(preguntasAcertadas)) {
+                alert("Por favor, completa ambos campos con números válidos.");
+                return;
+            }
+            
+            // Validar lógica: acertadas no puede ser mayor al total
+            if (preguntasAcertadas > totalPreguntas) {
+                alert("Las preguntas acertadas no pueden ser más que el total de preguntas.");
+                return;
+            }
+            
+            // Validar numeros
+            if (totalPreguntas <= 0 || preguntasAcertadas < 0){
+                alert("Deben ser numeros mayores a 0.");
+                return;
+            }
+            
+            // Mostramos todos los divs con clase "resultado"
+            for (let cadaClase of resultados) {
+                cadaClase.removeAttribute("hidden");
+            }
             
             const puntosPorPregunta = 10 / totalPreguntas; // Puntos por cada pregunta
             
@@ -55,11 +130,11 @@
     <button onclick="calcularPuntosPorPregunta()">Calcular puntos</button>
     
     <div class="resultado" hidden>
-        <p>Teniendo en cuenta el total de preguntas, <span id="totalPreguntas"></span>,
-        cada pregunta vale <span id="puntosPorPregunta"></span> puntos, por lo que las puntuaciones serían las siguientes: </p>
+        <p>Teniendo en cuenta el total de preguntas, <span class="puntos" id="totalPreguntas"></span>,
+        cada pregunta vale <span class="puntos" id="puntosPorPregunta"></span> puntos, por lo que las puntuaciones serían las siguientes: </p>
     </div>
     
-    <div class="resultado">
+    <div class="resultado" hidden>
         <div>
             <p>Si se entrega antes de 1 hora tendrás: <span class="puntos" id="1hora"></span></p>
         </div>
