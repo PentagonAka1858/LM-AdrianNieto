@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     hideLoader();
 });
+
 // Función para abrir el Nav, ajustando su ancho a 250px y un fondo oscuro al resto de la pagina
 function openNav() {
     document.getElementById("mySidenav").style.width = "20%";
@@ -51,7 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const validPaths = [
         "/subidaDeNota_IOClickd/version1/html/inicio.html",
         "/subidaDeNota_IOClickd/version1/html/ratones.html",
-        "/subidaDeNota_IOClickd/version1/html/wip.html"
+        "/subidaDeNota_IOClickd/version1/html/wip.html",
+        "https://pentagonaka1858.github.io/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/inicio.html",
+        "https://pentagonaka1858.github.io/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/ratones.html",
+        "https://pentagonaka1858.github.io/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/wip.html"
     ];
 
     const current = window.location.pathname;
