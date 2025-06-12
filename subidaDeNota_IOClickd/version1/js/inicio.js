@@ -55,7 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
         "/subidaDeNota_IOClickd/version1/html/wip.html",
         "https://pentagonaka1858.github.io/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/inicio.html",
         "https://pentagonaka1858.github.io/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/ratones.html",
-        "https://pentagonaka1858.github.io/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/wip.html"
+        "https://pentagonaka1858.github.io/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/wip.html",
+        "/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/inicio.html",
+        "/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/ratones.html",
+        "/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/wip.html"
     ];
 
     const current = window.location.pathname;
