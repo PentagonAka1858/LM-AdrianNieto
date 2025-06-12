@@ -96,13 +96,25 @@ function displayProducts(productList) {
         const productDiv = document.createElement('div');
         productDiv.classList.add('product');
 
+        // Create buttons separately for better control
+        const moreInfoBtn = document.createElement('button');
+        moreInfoBtn.className = 'more-info-btn';
+        moreInfoBtn.textContent = 'Más info';
+        moreInfoBtn.onclick = () => toggleDetails(index);
+
+        const recommendBtn = document.createElement('button');
+        recommendBtn.className = 'more-info-btn';
+        recommendBtn.textContent = '¿Por qué este ratón?';
+        recommendBtn.onclick = () => toggleRecommendation(index);
+
+        // Set inner HTML for product details (excluding buttons)
         productDiv.innerHTML = `
             <h2>${p.name}</h2>
             <p><strong>Marca:</strong> ${p.brand}</p>
             <p><strong>Agarre:</strong> ${p.grip_type}</p>
             <p><strong>Rango de precio:</strong> ${p.price_range}</p>
             <p><strong>Colores:</strong> ${p.color}</p>
-            <button class="more-info-btn" onclick="toggleDetails(${index})">Más info</button>
+            <div class="buttons-container"></div>
             <div class="more-info hidden" id="more-info-${index}">
                 <p><strong>Peso:</strong> ${p.weight}g</p>
                 <p><strong>Tamaño:</strong> ${p.width}mm x ${p.height}mm x ${p.tall}mm</p>
@@ -111,7 +123,15 @@ function displayProducts(productList) {
                 <p><strong>Marca conocida:</strong> ${p.known_brand ? "Sí" : "No"}</p>
                 <p><strong>Tiendas:</strong> ${p.available_stores.join(', ')}</p>
             </div>
+            <div class="recommendation-message hidden" id="recommendation-${index}">
+                <p>Este ratón es para ti si quieres lo mejor en la palma de tu mano.</p>
+            </div>
         `;
+
+        // Append buttons to the buttons container div
+        const buttonsContainer = productDiv.querySelector('.buttons-container');
+        buttonsContainer.appendChild(moreInfoBtn);
+        buttonsContainer.appendChild(recommendBtn);
 
         container.appendChild(productDiv);
     });
@@ -162,7 +182,37 @@ function autoSetPriceBounds() {
 
 function toggleDetails(index) {
     const details = document.getElementById(`more-info-${index}`);
-    details.classList.toggle("hidden");
+    const productDiv = details.parentElement;
+    const recommendation = productDiv.querySelector(".recommendation-message");
+
+    const isVisible = !details.classList.contains("hidden");
+
+    if (isVisible) {
+        details.classList.add("hidden");  // hide details
+    } else {
+        details.classList.remove("hidden");  // show details
+        // Hide recommendation if visible
+        if (recommendation && !recommendation.classList.contains("hidden")) {
+            recommendation.classList.add("hidden");
+        }
+    }
+}
+
+function toggleRecommendation(index) {
+    const recommendation = document.getElementById(`recommendation-${index}`);
+    const productDiv = recommendation.parentElement;
+    const moreInfo = productDiv.querySelector(`#more-info-${index}`);
+
+    const isVisible = !recommendation.classList.contains("hidden");
+
+    if (isVisible) {
+        recommendation.classList.add("hidden");
+    } else {
+        recommendation.classList.remove("hidden");
+        if (!moreInfo.classList.contains("hidden")) {
+            moreInfo.classList.add("hidden");
+        }
+    }
 }
 
 window.applyFilters = applyFilters;
