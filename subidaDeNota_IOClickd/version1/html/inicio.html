@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/logo.png">
+    <link rel="stylesheet" type="text/css" href="../css/base.css">
+    <link rel="stylesheet" type="text/css" href="../css/inicio.css">
+    <script src="../js/inicio.js"></script>
+    <title>I/OClickd!</title>
+</head>
+<body>
+    <div id="loader">
+        <div class="spinner"></div>
+        <p class="loader-text">Cargando...</p>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <!-- 
+            &times; es el símbolo de X 
+            javascript:void(0) es para que la página al darle al enlace se quede en el el mismo punto (la función devuelve nulo, por lo que no redirecciona)
+        -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h1><a disabled>Productos</a></h1>
+            <a class="productosSideNav" href="./inicio.html">Inicio</a>
+            <a class="productosSideNav" href="./ratones.html">Ratones</a>
+            <a class="productosSideNav" href="./teclados.html">Teclados</a>
+            <a class="productosSideNav" href="./audio.html">Cascos</a>
+            <a class="productosSideNav" href="./pantallas.html">Pantallas</a>
+            <a class="productosSideNav" href="./alfombrillas.html">Alfombrillas</a>
+        <h1><a href="#">Sobre nosotros</a></h1>
+        <h1><a href="#">Nueva versión</a></h1>
+        <div id="footerSideNav" class="normal-text">© 2025 PentagonAka1858™</div>
+    </div>
+    <div id="main">
+        <header id="cabecera">
+            <div id="left">
+                <img id="logo" src="../img/logo.png" alt="Logo I/OClickd!" onclick="openNav()">
+                <a onclick="openNav()">I/OClickd!</a>
+            </div>
+            <nav id="menu"">
+                <a href="#">Nueva versión</a>
+                <a href="#">Sobre nosotros</a>
+                <div class="dropdown">
+                    <a href="#" onclick="menuProductos()" class="dropbtn">¡Productos!</a>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="./inicio.html">Inicio</a>
+                        <a href="./ratones.html">Ratones</a>
+                        <a href="./teclados.html">Teclados</a>
+                        <a href="./audio.html">Cascos</a>
+                        <a href="./pantallas.html">Pantallas</a>
+                        <a href="./alfombrillas.html">Alfombrillas</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section id="productos">
+            <section id="principal">
+                <div class="bg-image-mouse bg-image"></div>
+                <div class="bg-text-mouse bg-text">
+                    <h1 class="tituloPrincipal">Ratones</h1>
+                </div>
+                <a href="ratones.html" class="section-link-overlay" aria-label="Ir a Ratones"></a>
+            </section>
+            <section id="secundarios">
+                <section id="secundario1" class="secundario">
+                        <div class="bg-image-keyboard bg-image-secundarios"></div>
+                        <div class="bg-text-keyboard bg-text-secundarios">
+                            <h1 class="tituloSecundario">Teclados</h1>
+                        </div>
+                        <a href="teclados.html" class="section-link-overlay" aria-label="Ir a Teclados"></a>
+                </section>
+                <section id="secundario2" class="secundario">
+                    <div class="bg-image-audio bg-image-secundarios"></div>
+                    <div class="bg-text-audio bg-text-secundarios">
+                        <h1 class="tituloSecundario">Cascos</h1>
+                    </div>
+                    <a href="audio.html" class="section-link-overlay" aria-label="Ir a Audio"></a>
+                </section>
+                <section id="secundario3" class="secundario">
+                    <div class="bg-image-screen bg-image-secundarios"></div>
+                    <div class="bg-text-screen bg-text-secundarios">
+                        <h1 class="tituloSecundario">Pantallas</h1>
+                    </div>
+                    <a href="pantallas.html" class="section-link-overlay" aria-label="Ir a Pantallas"></a>
+                </section>
+                <section id="secundario4" class="secundario">
+                    <div class="bg-image-mousepad bg-image-secundarios"></div>
+                    <div class="bg-text-mousepad bg-text-secundarios">
+                        <h1 class="tituloSecundario">Alfombrillas</h1>
+                    </div>
+                    <a href="alfombrillas.html" class="section-link-overlay" aria-label="Ir a Alfombrillas"></a>
+                </section>
+            </section>
+        </section>
+    </div>
+</body>
+</html>

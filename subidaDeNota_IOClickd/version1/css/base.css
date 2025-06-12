@@ -4,6 +4,7 @@
 
 :root {
     --main-color-blue: #b3dae2;
+    --main-color-blue-opacity: #b3dae2be;
     --main-color-blue-b: #4979fc;
     --main-color-yellow: #ECED86;
     --main-color-black: #0f0f0f;
@@ -20,26 +21,49 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: var(--main-color-white);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .normal-text {
     font-family: var(--font-text);
     font-weight: 400;
     font-style: normal;
 }
 
-body {
-    background-color: var(--main-color-white);
-}
+
 
 #cabecera {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5em;
-    max-height: 160px;
-    height: auto;
+    padding: 0.5em 1em;
+    height: 10vh;
+    min-height: 60px;
     width: 100%;
-    background-color: var(--main-color-blue); /* Optional background */
+    background-color: var(--main-color-blue);
     font-family: var(--font-header);
+    z-index: 100;
+}
+
+#left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+}
+
+#logo {
+    height: 100%;
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    cursor: pointer;
 }
 
 #cabecera a:not(.dropdown-content) {
@@ -62,20 +86,6 @@ body {
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Left side (logo + text) */
-#left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-#logo {
-    max-height: 100%;
-    height: 100px; /* Adjust if needed */
-    width: auto;
-    cursor: pointer;
-}
-
 /* Right-side navigation */
 #menu {
     display: flex;
@@ -83,34 +93,19 @@ body {
     gap: 20px;
 }
 
-/* Optional responsive behavior */
-@media (max-width: 768px) {
-    #cabecera {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-    }
-
-    #menu {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-}
-
 
 /* The side navigation menu */
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
     top: 0;
     left: 0;
-    background-color: var(--main-color-yellow); /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    background-color: var(--main-color-yellow); 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s; 
 
     /* FOR FOOTER */
     display: flex;
@@ -153,7 +148,7 @@ body {
     flex-shrink: 0;
 }
 
-/* When you mouse over the navigation links, change their color */
+/* When pointer is over the navigation links, change their color */
 .sidenav a:hover:not([disabled]){
     color: var(--main-color-blue-b);
 }
@@ -167,13 +162,18 @@ body {
     margin-left: 50px;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+/* Style page content */
 #main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     transition: margin-left 0.5s;
     background-color: var(--main-color-white);
+    
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/* Change padding and font size on smaller screens */
 @media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 15px;
@@ -220,7 +220,7 @@ body {
     overflow: hidden;
 
     opacity: 0;
-    transform: translateY(-10px); /* Start slightly above */
+    transform: translateY(-10px);
     visibility: hidden;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -229,7 +229,7 @@ body {
 /* Show with slide-from-top effect */
 .dropdown-content.show {
     opacity: 1;
-    transform: translateY(0); /* Slide to correct position */
+    transform: translateY(0); 
     visibility: visible;
 }
 
@@ -250,21 +250,47 @@ body {
     color: var(--main-color-black);
 }
 
-/* EFECTO ARCOIRIS Y ESTILO DE LETRA */
-.tituloPrincipal, .tituloSecundario {
-    margin-top: 0px;
-    margin-bottom: 50px;
-    text-align: center;
-    font-size: 3rem;
-    font-family: var(--font-bold);
-    letter-spacing: 0.15rem;
-    text-transform: uppercase;
-    color: var(--main-color-black);
-    text-shadow: 4px 4px #ef3550,
-                8px 8px #f48fb1,
-                12px 12px #7e57c2,
-                16px 16px #2196f3,
-                20px 20px #26c6da,
-                24px 24px #43a047
+#loader {
+    position: fixed;
+    inset: 0;
+    background: var(--main-color-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.4s ease;
 }
 
+#loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 8px solid var(--main-color-blue-opacity);
+    border-top: 8px solid var(--main-color-blue-b);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+.loader-text {
+    font-family: var(--font-header);
+    font-size: 1.5rem;
+    color: var(--main-color-yellow);
+    text-shadow: 0 0 10px var(--main-color-yellow);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px var(--main-color-yellow); }
+    to   { text-shadow: 0 0 20px var(--main-color-yellow), 0 0 30px var(--main-color-yellow); }
+}

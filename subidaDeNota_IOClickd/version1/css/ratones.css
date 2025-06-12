@@ -1,0 +1,145 @@
+/* IMPORTACIONES */
+
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dela+Gothic+One&family=Readex+Pro:wght@160..700&display=swap');
+
+:root {
+    --main-color-blue: #b3dae2;
+    --main-color-blue-opacity: #b3dae2be;
+    --main-color-blue-b: #4979fc;
+    --main-color-yellow: #ECED86;
+    --main-color-black: #0f0f0f;
+    --main-color-white: #e0e0e0;
+    --font-bold: "Dela Gothic One", sans-serif;
+    --font-header: "Readex Pro", sans-serif;
+    --font-text: "Bai Jamjuree", sans-serif;
+}
+
+/* The side navigation menu */
+.sidenav {
+
+    background-color: var(--main-color-white); 
+
+}
+
+#page-container {
+    display: flex;
+    min-height: 96vh;
+}
+
+/* Sidebar filter */
+#filter-panel {
+    width: 260px;
+    background-color: var(--main-color-blue);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: var(--font-header);
+    position: sticky;
+    top: 0;
+    height: 96vh;
+}
+
+#filter-panel h2 {
+    font-family: var(--font-bold);
+    color: var(--main-color-black);
+    margin-bottom: 8px;
+}
+
+#filter-panel label {
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+#filter-panel select,
+#filter-panel input[type="range"] {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--main-color-yellow);
+    color: var(--main-color-black);
+}
+
+#filter-panel button {
+    margin-top: auto;
+    padding: 10px;
+    background-color: var(--main-color-blue-b);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: var(--font-header);
+    transition: background 0.3s ease;
+}
+#filter-panel button:hover {
+    background-color: var(--main-color-yellow);
+    color: var(--main-color-black);
+}
+
+/* Price slider group */
+#price-slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#price-slider-group span {
+    font-size: 0.9rem;
+}
+
+/* Product grid */
+#product-list {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: flex-start;
+    background-color: var(--main-color-black);
+}
+
+.product {
+    background-color: var(--main-color-yellow);
+    border-radius: 10px;
+    padding: 16px;
+    width: 280px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    font-family: var(--font-text);
+    color: var(--main-color-black);
+}
+
+.product h2 {
+    font-family: var(--font-bold);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.more-info {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.more-info.hidden {
+    display: none;
+}
+
+.more-info-btn {
+    margin-top: 10px;
+    background-color: var(--main-color-blue);
+    color: var(--main-color-black);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: var(--font-header);
+    transition: background 0.3s ease;
+}
+
+.more-info-btn:hover {
+    background-color: var(--main-color-blue-b);
+    color: var(--main-color-black);
+}
