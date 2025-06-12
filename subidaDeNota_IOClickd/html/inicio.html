@@ -9,69 +9,81 @@
     <title>I/OClickd!</title>
 </head>
 <body>
+    <div id="loader"></div>
     <div id="mySidenav" class="sidenav">
+        <!-- 
+            &times; es el símbolo de X 
+            javascript:void(0) es para que la página al darle al enlace se quede en el el mismo punto (la función devuelve nulo, por lo que no redirecciona)
+        -->
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+        <h1><a disabled>Productos</a></h1>
+            <a class="productosSideNav" href="#">Ratones</a>
+            <a class="productosSideNav" href="#">Teclados</a>
+            <a class="productosSideNav" href="#">Cascos</a>
+            <a class="productosSideNav" href="#">Pantallas</a>
+            <a class="productosSideNav" href="#">Alfombrillas</a>
+        <h1><a href="#">Contacto</a></h1>
+        <h1><a href="#">Nueva versión</a></h1>
+        <div id="footerSideNav" class="normal-text">© 2025 PentagonAka1858™</div>
     </div>
     <div id="main">
         <header id="cabecera">
-        <img id="logo" src="../img/logo.png" alt="Logo I/OClickd!" onclick="openNav()">
-        <nav id="menu">
-            <a href="#" onclick="openNav()">I/OClickd!</a>
-            <a href="#">Nueva versión</a>
-            <a href="#">Contacto</a>
-            <div class="dropdown">
-                <a href="#" onclick="menuProductos()" class="dropbtn">Dropdown</a>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="#">Ratones</a>
-                    <a href="#">Teclados</a>
-                    <a href="#">Cascos</a>
-                    <a href="#">Pantallas</a>
-                    <a href="#">Alfombrillas</a>
-                </div>
+            <div id="left">
+                <img id="logo" src="../img/logo.png" alt="Logo I/OClickd!" onclick="openNav()">
+                <a href="#" onclick="openNav()">I/OClickd!</a>
             </div>
-        </nav>
-    </header>
-    <section id="productos">
-        <section id="principal">
-            <div class="bg-image-mouse bg-image"></div>
-            <div class="bg-text-mouse bg-text">
-                <h1>Ratones</h1>
-            </div>
+            <nav id="menu">
+                <a href="#">Nueva versión</a>
+                <a href="#">Contacto</a>
+                <div class="dropdown">
+                    <a href="#" onclick="menuProductos()" class="dropbtn">¡Productos!</a>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#">Ratones</a>
+                        <a href="#">Teclados</a>
+                        <a href="#">Cascos</a>
+                        <a href="#">Pantallas</a>
+                        <a href="#">Alfombrillas</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section id="productos">
+            <section id="principal">
+                <div class="bg-image-mouse bg-image"></div>
+                <div class="bg-text-mouse bg-text">
+                    <h1 class="tituloPrincipal">Ratones</h1>
+                </div>
+            </section>
+            <section id="secundarios">
+                <section id="secundario1">
+                    <div class="bg-image-keyboard bg-image"></div>
+                    <div class="bg-text-keyboard bg-text">
+                        <h1 class="tituloSecundario">Teclados</h1>
+                    </div>
+                </section>
+                <section id="secundario2">
+                    <div class="bg-image-audio bg-image"></div>
+                    <div class="bg-text-audio bg-text">
+                        <h1 class="tituloSecundario">Cascos</h1>
+                    </div>
+                </section>
+                <section id="secundario3">
+                    <div class="bg-image-scren bg-image"></div>
+                    <div class="bg-text-scren bg-text">
+                        <h1 class="tituloSecundario">Pantallas</h1>
+                    </div>
+                </section>
+                <section id="secundario4">
+                    <div class="bg-image-mousepad bg-image"></div>
+                    <div class="bg-text-mousepad bg-text">
+                        <h1 class="tituloSecundario">Alfombrillas</h1>
+                    </div>
+                </section>
+            </section>
         </section>
-        <section id="secundarios">
-            <section id="secundario1">
-                <div class="bg-image-keyboard bg-image"></div>
-                <div class="bg-text-keyboard bg-text">
-                    <h1>Teclados</h1>
-                </div>
-            </section>
-            <section id="secundario2">
-                <div class="bg-image-audio bg-image"></div>
-                <div class="bg-text-audio bg-text">
-                    <h1>Cascos</h1>
-                </div>
-            </section>
-            <section id="secundario3">
-                <div class="bg-image-scren bg-image"></div>
-                <div class="bg-text-scren bg-text">
-                    <h1>Pantallas</h1>
-                </div>
-            </section>
-            <section id="secundario4">
-                <div class="bg-image-mousepad bg-image"></div>
-                <div class="bg-text-mousepad bg-text">
-                    <h1>Alfombrillas</h1>
-                </div>
-            </section>
-        </section>
-    </section>
-    <footer id="pie">
-        
-    </footer>
+        <footer id="pie">
+            
+        </footer>
     </div>
 </body>
 </html>
