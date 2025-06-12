@@ -49,22 +49,16 @@ window.onclick = function(event) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const validPaths = [
-        "/subidaDeNota_IOClickd/version1/html/inicio.html",
-        "/subidaDeNota_IOClickd/version1/html/ratones.html",
-        "/subidaDeNota_IOClickd/version1/html/wip.html",
-        "https://pentagonaka1858.github.io/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/inicio.html",
-        "https://pentagonaka1858.github.io/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/ratones.html",
-        "https://pentagonaka1858.github.io/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/wip.html",
-        "/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/inicio.html",
-        "/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/ratones.html",
-        "/LM-AdrianNieto/subidaDeNota_IOClickd/version1/html/wip.html"
+    const validPages = [
+        "inicio.html",
+        "ratones.html",
+        "wip.html"
     ];
 
-    const current = window.location.pathname;
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.substring(currentPath.lastIndexOf("/") + 1);
 
-    // Si no coincide la ruta con ninguna válida, redirige a la página WIP
-    if (!validPaths.includes(current)) {
-        window.location.replace("../html/wip.html");  // Use correct relative path
+    if (!validPages.includes(currentPage)) {
+        window.location.replace("../html/wip.html");
     }
 });
