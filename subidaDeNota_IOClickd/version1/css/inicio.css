@@ -14,6 +14,10 @@
     --font-text: "Bai Jamjuree", sans-serif;
 }
 
+#logo {
+    padding: 0px !important;
+}
+
 /* EFECTO ARCOIRIS Y ESTILO DE LETRA */
 .tituloPrincipal, .tituloSecundario {
     width: fit-content;

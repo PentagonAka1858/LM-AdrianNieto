@@ -64,6 +64,7 @@ body {
     object-fit: contain;
     display: block;
     cursor: pointer;
+    padding: 10px;
 }
 
 #cabecera a:not(.dropdown-content) {

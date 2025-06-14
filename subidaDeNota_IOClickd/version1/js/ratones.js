@@ -105,7 +105,7 @@ function displayProducts(productList) {
         const recommendBtn = document.createElement('button');
         recommendBtn.className = 'more-info-btn';
         recommendBtn.textContent = '¿Por qué este ratón?';
-        recommendBtn.onclick = () => toggleRecommendation(index);
+        recommendBtn.onclick = () => toggleRecommendation(index, p);
 
         // Set inner HTML for product details (excluding buttons)
         productDiv.innerHTML = `
@@ -124,7 +124,7 @@ function displayProducts(productList) {
                 <p><strong>Tiendas:</strong> ${p.available_stores.join(', ')}</p>
             </div>
             <div class="recommendation-message hidden" id="recommendation-${index}">
-                <p>Este ratón es para ti si quieres lo mejor en la palma de tu mano.</p>
+                <p id=recommendation-text-${index}></p>
             </div>
         `;
 
@@ -136,8 +136,6 @@ function displayProducts(productList) {
         container.appendChild(productDiv);
     });
 }
-
-
 
 function autoSetPriceBounds() {
     const priceValues = products
@@ -198,14 +196,14 @@ function toggleDetails(index) {
     }
 }
 
-function toggleRecommendation(index) {
+async function toggleRecommendation(index, p) {
     const recommendation = document.getElementById(`recommendation-${index}`);
     const productDiv = recommendation.parentElement;
     const moreInfo = productDiv.querySelector(`#more-info-${index}`);
-
+    const recommendationText = document.getElementById("recommendation-text-" + index);
     const isVisible = !recommendation.classList.contains("hidden");
 
-    if (isVisible) {
+        if (isVisible) {
         recommendation.classList.add("hidden");
     } else {
         recommendation.classList.remove("hidden");
@@ -213,6 +211,34 @@ function toggleRecommendation(index) {
             moreInfo.classList.add("hidden");
         }
     }
+
+    if (recommendationText.innerHTML === "") {
+        recommendationText.innerHTML = "<em>Cargando recomendación...</em>";
+
+        await new Promise(requestAnimationFrame);
+
+        try {
+            const jsonMouse = await magicLoopsAPI(p.name);
+            recommendationText.innerHTML = jsonMouse.reason;
+        } catch (error) {
+            recommendationText.innerHTML = "<em>Error al cargar la recomendación.</em>";
+            console.error(error);
+        }
+    }
+}
+
+async function magicLoopsAPI(mouseName) {
+    // Trigger your loop
+    const response = await fetch('https://magicloops.dev/api/loop/e130cee9-e647-424e-aa69-fb79ddd0f63c/run', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+        "mouse_name": `"${mouseName}"`
+    })});
+    const data = await response.json();
+    console.log(data);
+    console.log(data.reason);
+    return data;
 }
 
 window.applyFilters = applyFilters;

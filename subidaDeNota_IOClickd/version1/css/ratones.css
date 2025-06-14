@@ -63,7 +63,7 @@
     margin-top: 20px;
     width: 100%;
     padding: 0.5rem;
-    background-color: var(--main-color-blue-b);
+    background-color: var(--main-color-yellow);
     color: var(--main-color-black);
     border: none;
     border-radius: 6px;
@@ -74,7 +74,7 @@
 }
 
 #filter-panel button:hover {
-    background-color: var(--main-color-yellow);
+    background-color: var(--main-color-blue-b);
     color: var(--main-color-black);
 }
 
@@ -103,8 +103,7 @@
 }
 
 .product {
-    overflow: hidden; /* hide overflow to prevent scrollbars */
-    
+    overflow: scroll;
 }
 
 .product {

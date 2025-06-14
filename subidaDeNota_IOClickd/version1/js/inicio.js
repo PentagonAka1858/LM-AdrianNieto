@@ -48,15 +48,18 @@ window.onclick = function(event) {
     }
 }
 
+//Evento 
 document.addEventListener("DOMContentLoaded", () => {
     const validPages = [
-        "inicio.html",
-        "ratones.html",
-        "wip.html"
+        "inicio",
+        "ratones",
+        "wip",
+        "aboutus"
     ];
 
     const currentPath = window.location.pathname;
-    const currentPage = currentPath.substring(currentPath.lastIndexOf("/") + 1);
+    const currentPageAndExtension = currentPath.substring(currentPath.lastIndexOf("/") + 1);
+    const currentPage = currentPageAndExtension.substring(currentPageAndExtension.lastIndexOf("."), -1);
 
     if (!validPages.includes(currentPage)) {
         window.location.replace("../html/wip.html");

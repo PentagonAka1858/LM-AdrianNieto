@@ -1,0 +1,91 @@
+/* IMPORTACIONES */
+
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dela+Gothic+One&family=Readex+Pro:wght@160..700&display=swap');
+
+:root {
+    --main-color-blue: #b3dae2;
+    --main-color-blue-opacity: #b3dae2be;
+    --main-color-blue-b: #4979fc;
+    --main-color-yellow: #ECED86;
+    --main-color-black: #0f0f0f;
+    --main-color-white: #e0e0e0;
+    --font-bold: "Dela Gothic One", sans-serif;
+    --font-header: "Readex Pro", sans-serif;
+    --font-text: "Bai Jamjuree", sans-serif;
+}
+
+/* Reset */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: var(--main-color-black);
+    color: var(--main-color-black);
+    font-family: var(--font-text);
+}
+
+
+#main {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+.aboutus-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 95vw;
+}
+
+.aboutus-header hr {
+    flex: 1;
+    border: 2px solid var(--main-color-blue-b);
+    border-radius: 30px;
+}
+
+.aboutus-title {
+    font-family: var(--font-bold);
+    font-size: 1.4rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.aboutus-text {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 30vw;
+    list-style-type: disc;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px  var(--main-color-blue-b), 0 0 10px var(--main-color-blue-opacity);
+    }
+    to {
+        text-shadow: 0 0 15px  var(--main-color-blue-b), 0 0 30px var(--main-color-blue-opacity);
+    }
+}
