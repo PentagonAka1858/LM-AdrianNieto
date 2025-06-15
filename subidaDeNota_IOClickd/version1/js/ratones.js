@@ -96,7 +96,6 @@ function displayProducts(productList) {
         const productDiv = document.createElement('div');
         productDiv.classList.add('product');
 
-        // Create buttons separately for better control
         const moreInfoBtn = document.createElement('button');
         moreInfoBtn.className = 'more-info-btn';
         moreInfoBtn.textContent = 'Más info';
@@ -104,10 +103,9 @@ function displayProducts(productList) {
 
         const recommendBtn = document.createElement('button');
         recommendBtn.className = 'more-info-btn';
-        recommendBtn.textContent = '¿Por qué este ratón?';
+        recommendBtn.textContent = 'Consultar IA';
         recommendBtn.onclick = () => toggleRecommendation(index, p);
 
-        // Set inner HTML for product details (excluding buttons)
         productDiv.innerHTML = `
             <h2>${p.name}</h2>
             <p><strong>Marca:</strong> ${p.brand}</p>
@@ -128,7 +126,6 @@ function displayProducts(productList) {
             </div>
         `;
 
-        // Append buttons to the buttons container div
         const buttonsContainer = productDiv.querySelector('.buttons-container');
         buttonsContainer.appendChild(moreInfoBtn);
         buttonsContainer.appendChild(recommendBtn);
@@ -228,7 +225,6 @@ async function toggleRecommendation(index, p) {
 }
 
 async function magicLoopsAPI(mouseName) {
-    // Trigger your loop
     const response = await fetch('https://magicloops.dev/api/loop/e130cee9-e647-424e-aa69-fb79ddd0f63c/run', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -240,5 +236,56 @@ async function magicLoopsAPI(mouseName) {
     console.log(data.reason);
     return data;
 }
+
+const driver = window.driver.js.driver;
+
+function cargarTourRatones(){
+    const driverObj = driver({
+        prevBtnText: 'Atrás', 
+        nextBtnText: 'Siguiente',
+        doneBtnText: 'Finalizar',
+        showProgress: true,
+        progressText: 'Paso {{current}} de {{total}}',
+        steps: [
+            { popover: 
+                { title: 'I/OClickd! tour', description: 'Para finalizar el tour pulsa el botón "x" o usa la tecla ESC. Puedes usar las flechas o los botones integrados para moverte por el tour.' }
+            },
+            { element: '#filter-panel', popover: 
+                { title: 'Filtros', description: 'Para poder así filtrar los distintos ratones en la BD. Se autorellenan dependiendo de los datos de la BD.', side: "right", align: 'start' }
+            },
+            { element: '#brand-filter', popover: 
+                { title: 'Marcas', description: 'Filtro por marcas.', side: "right", align: 'start' }
+            },
+            { element: '#grip-filter', popover: 
+                { title: 'Agarre', description: 'Filtro por tipo de agarre.', side: "right", align: 'start' }
+            },
+            { element: '#polling-filter', popover: 
+                { title: 'Tasa de refresco', description: 'Filtro por tasa de refresco.', side: "right", align: 'start' }
+            },
+            { element: '#form-filter', popover: 
+                { title: 'Forma', description: 'Filtro por forma del ratón.', side: "right", align: 'start' }
+            },
+            { element: '#color-filter', popover: 
+                { title: 'Color', description: 'Filtro por colores disponibles del ratón.', side: "right", align: 'start' }
+            },
+            { element: '#known-filter', popover: 
+                { title: 'Marca conocida', description: 'Filtro para mostrar ratones de marcas conocidas o no.', side: "right", align: 'start' }
+            },
+            { element: '#price-slider-group', popover: 
+                { title: 'Precio', description: 'Filtro por precio.', side: "right", align: 'start' }
+            },
+            { element: '#filter-btn', popover: 
+                { title: 'Botón de filtrar', description: 'Pulsar el botón una vez configurado los filtros para filtrar los productos.', side: "right", align: 'start' }
+            },
+            { element: '#product-list', popover: 
+                { title: 'Productos', description: 'Productos con sus características. Se puede usar el botón "Más info" para más características y el de "Consultar IA" para consultar a la IA de por qué usar ese ratón.', side: "top", align: 'start' }
+            }
+        ]
+    });
+
+    driverObj.drive();
+
+}
+
 
 window.applyFilters = applyFilters;

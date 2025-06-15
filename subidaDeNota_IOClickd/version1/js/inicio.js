@@ -48,7 +48,18 @@ window.onclick = function(event) {
     }
 }
 
-//Evento 
+function hover(element) {
+    element.setAttribute('src', '../img/logoClickd.svg');
+    document.getElementById("audio").play();
+}
+
+function unhover(element) {
+    element.setAttribute('src', '../img/logo.svg');
+    document.getElementById('audio').pause();
+    document.getElementById('audio').currentTime = 0;
+}
+
+//Evento para redireccionar a WIP en páginas no deseadas
 document.addEventListener("DOMContentLoaded", () => {
     const validPages = [
         "inicio",

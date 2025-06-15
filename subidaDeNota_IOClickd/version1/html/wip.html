@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../img/logo.png">
+    <link rel="icon" type="image/png" href="../img/logo.svg">
     <link rel="stylesheet" type="text/css" href="../css/base.css">
     <link rel="stylesheet" type="text/css" href="../css/wip.css">
     <script src="../js/inicio.js"></script>
@@ -30,8 +30,9 @@
     <div id="main">
         <header id="cabecera">
             <div id="left">
-                <img id="logo" src="../img/logo.png" alt="Logo I/OClickd!" onclick="openNav()"/>
-                <a href="#" onclick="openNav()">I/OClickd!</a>
+                <audio id="audio" src="../audio/audioKeypress.mp3" preload="auto"></audio>
+                <img id="logo" src="../img/logo.svg" alt="Logo I/OClickd!" onclick="openNav()" onmouseover="hover(this);" onmouseout="unhover(this);"/>
+                <a href="inicio.html">I/OClickd!</a>
             </div>
             <nav id="menu">
                 <a href="#">Nueva versión</a>

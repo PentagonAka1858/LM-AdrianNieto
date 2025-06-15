@@ -23,14 +23,14 @@
 
 /* Filter Panel - Fixed to the left */
 #filter-panel {
-    width: 260px;
+    width: clamp(12vw, 16vw, 260px);
     background-color: var(--main-color-blue);
     padding: 1rem;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
     position: sticky;
     top: 0;
-    height: 100vh;
+    height: 90vh;
     z-index: 2;
     font-family: var(--font-text);
 }
