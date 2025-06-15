@@ -216,7 +216,7 @@ async function toggleRecommendation(index, p) {
 
         try {
             const jsonMouse = await magicLoopsAPI(p.name);
-            recommendationText.innerHTML = jsonMouse.reason;
+            recommendationText.innerHTML = jsonMouse.reason == undefined ? json.reason : "Error al cargar la recomendación.";
         } catch (error) {
             recommendationText.innerHTML = "<em>Error al cargar la recomendación.</em>";
             console.error(error);
