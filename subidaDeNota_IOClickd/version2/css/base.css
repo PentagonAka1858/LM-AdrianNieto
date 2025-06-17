@@ -31,6 +31,9 @@
         height: 8vh !important;
         max-height: 8vh !important;
     }
+    #cabecera {
+        padding-top: 20px !important;
+    }
 }
 
 /* Reset */
