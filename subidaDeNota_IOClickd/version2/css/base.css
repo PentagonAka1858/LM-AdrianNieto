@@ -24,6 +24,13 @@
     .sidenav a, .sidenav h1{
         font-size: 7vw !important;
     }
+    #anadirRaton {
+        display: block !important;
+    }
+    #logo {
+        height: 8vh !important;
+        max-height: 8vh !important;
+    }
 }
 
 /* Reset */
@@ -31,6 +38,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+#anadirRaton {
+    display: none;
 }
 
 body {
