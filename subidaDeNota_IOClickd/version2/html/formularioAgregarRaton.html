@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/driver.js@latest/dist/driver.js.iife.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@latest/dist/driver.css"/>
     <link rel="icon" type="image/png" href="../img/logo.svg">
     <link rel="stylesheet" type="text/css" href="../css/base.css">
-    <link rel="stylesheet" type="text/css" href="../css/ratones.css">
+    <link rel="stylesheet" type="text/css" href="../css/formularioRaton.css">
     <script src="../js/inicio.js"></script>
-    <script src="../js/ratones.js"></script>
     <title>I/OClickd!</title>
 </head>
 <body>
@@ -31,7 +28,7 @@
             <a class="productosSideNav" href="./pantallas.html">Pantallas</a>
             <a class="productosSideNav" href="./alfombrillas.html">Alfombrillas</a>
         <h1><a href="./aboutus.html">Sobre nosotros</a></h1>
-        <h1><a href="../../version2/html/inicio.html">Nueva versión</a></h1>
+        <h1><a href="#">Nueva versión</a></h1>
         <div id="footerSideNav" class="normal-text">© 2025 PentagonAka1858™</div>
     </div>
     <div id="main">
@@ -42,9 +39,7 @@
                 <a href="inicio.html">I/OClickd!</a>
             </div>
             <nav id="menu">
-                <a href="../../version2/html/inicio.html" id="nuevaVersion">Nueva versión</a>
-                <a onclick="cargarTourRatones()">Empezar tour</a>
-                <a href="./formularioAgregarRaton.html">Añadir ratón</a>
+                <a href="#">Nueva versión</a>
                 <a href="./aboutus.html">Sobre nosotros</a>
                 <div class="dropdown">
                     <a href="#" onclick="menuProductos()" class="dropbtn">¡Productos!</a>
@@ -60,43 +55,51 @@
             </nav>
         </header>
         <section id="page-container">
-            <aside id="filter-panel">
-                <h2>Filtrar productos</h2>
-
-                <label for="brand-filter">Marca</label>
-                <select id="brand-filter"></select>
-
-                <label for="grip-filter">Tipo de agarre</label>
-                <select id="grip-filter"></select>
-
-                <label for="polling-filter">Polling Rate</label>
-                <select id="polling-filter"></select>
-
-                <label for="form-filter">Forma</label>
-                <select id="form-filter"></select>
-
-                <label for="color-filter">Color</label>
-                <select id="color-filter"></select>
-
-                <label for="known-filter">¿Marca conocida?</label>
-                <select id="known-filter">
-                <option value="all">Todas</option>
-                <option value="true">Sí</option>
-                <option value="false">No</option>
-                </select>
-
-                <label>Rango de precio (€)</label>
-                <div id="price-slider-group">
-                <span id="min-price-label">0€</span>
-                <input type="range" id="price-slider-min" step="1">
-                <input type="range" id="price-slider-max" step="1">
-                <span id="max-price-label">100€</span>
-                </div>
-
-                <button id="filter-btn" onclick="applyFilters()">Filtrar</button>
-            </aside>
-
-            <main id="product-list"></main>
+            <form>
+                <!-- DATOS JSON -->
+                <!-- 
+                    "name": "",
+                    "width": 10,
+                    "height": 10,
+                    "tall": 10,
+                    "weight": 10,
+                    "brand": "",
+                    "grip_type": "",
+                    "polling_rate": "10 Hz",
+                    "color": "Black, White",
+                    "form": "Right-handed",
+                    "price_range": "10€ - 10€",
+                    "known_brand": true,
+                    "available_stores": ["", "", ""]
+                -->
+                <label>Nombre: </label>
+                <input type="text" name="name" required>
+                <label>Ancho: </label>
+                <input type="number" name="width" min="0" required>
+                <label>Largo: </label>
+                <input type="number" name="width" min="0" required>
+                <label>Alto: </label>
+                <input type="number" name="width" min="0" required>
+                <label>Peso: </label>
+                <input type="number" name="width" min="0" required>
+                <label>Marca: </label>
+                <input type="text" name="width" required>
+                <label>Tipo de agarre: </label>
+                <input type="text" name="width" required>
+                <label>Velocidad de polling: </label>
+                <input type="number" name="width"required min="250">
+                <label>Color: </label>
+                <input type="text" name="width" required>
+                <label>Forma: </label>
+                <input type="text" name="width" required>
+                <label>Rango de precios: </label>
+                <input type="text" name="width" required>
+                <label>Marca conocida: </label>
+                <input type="checkbox" name="known_brand">
+                <label>Tiendas disponibles: </label>
+                <input type="text" name="width" required>
+                <button type="submit">Enviar</button>
+            </form>
         </section>
     </div>
 </body>

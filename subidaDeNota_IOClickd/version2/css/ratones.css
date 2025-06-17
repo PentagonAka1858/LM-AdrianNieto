@@ -15,6 +15,53 @@
     --font-text: "Bai Jamjuree", sans-serif;
 }
 
+@media (max-width: 1100px) {
+    #main {
+        height: auto !important;
+        overflow: scroll !important;
+    }
+
+    #page-container {
+        flex-direction: column !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    #filter-panel {
+        width: 100% !important;
+        overflow: visible !important;
+        height: auto !important;
+        position: relative !important;
+        margin-top: 0 !important;
+        box-shadow: none !important;
+        z-index: 1;
+    }
+
+    #product-list {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 1rem !important;
+        gap: 1rem !important;
+        overflow-y: visible !important;
+    }
+
+    .product {
+        width: 100% !important;
+        height: auto !important;
+        padding: 1rem !important;
+    }
+
+    .buttons-container {
+        flex-direction: column !important;
+    }
+
+    .buttons-container button {
+        width: 100% !important;
+    }
+}
+
+
+
 #page-container {
     display: flex;
     height: 100vh;

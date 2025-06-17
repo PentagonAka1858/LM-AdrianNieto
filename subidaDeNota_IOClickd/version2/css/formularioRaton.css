@@ -1,0 +1,88 @@
+/* IMPORTACIONES */
+
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dela+Gothic+One&family=Readex+Pro:wght@160..700&display=swap');
+
+:root {
+    --main-color-blue: #b3dae2;
+    --main-color-blue-opacity: #b3dae2be;
+    --main-color-blue-b: #4979fc;
+    --main-color-yellow: #ECED86;
+    --main-color-black: #0f0f0f;
+    --main-color-white: #e0e0e0;
+    --font-bold: "Dela Gothic One", sans-serif;
+    --font-header: "Readex Pro", sans-serif;
+    --font-text: "Bai Jamjuree", sans-serif;
+}
+
+@media (max-width: 1100px) {
+    ul {
+        margin-left: 5vw !important;
+    }
+    li {
+        text-align: start !important;
+    }
+}
+
+/* Reset */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: var(--main-color-black);
+    color: var(--main-color-black);
+    font-family: var(--font-text);
+}
+
+#page-container {
+    padding: 30px;
+    background-color: var(--main-color-white);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 30px;
+    font-family: var(--font-text);
+}
+
+form label {
+    grid-column: span 1;
+    font-weight: bold;
+    color: var(--main-color-black);
+}
+
+form input[type="text"],
+form input[type="number"] {
+    padding: 8px;
+    background-color: var(--main-color-white);
+    border: 1px solid var(--main-color-blue-b);
+    border-radius: 4px;
+    color: var(--main-color-black);
+    font-family: var(--font-text);
+}
+
+form input[type="checkbox"] {
+    align-self: center;
+}
+
+form button {
+    grid-column: span 2;
+    padding: 10px 20px;
+    font-family: var(--font-bold);
+    background-color: var(--main-color-blue-b);
+    color: var(--main-color-black);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--main-color-yellow);
+    color: var(--main-color-black);
+}

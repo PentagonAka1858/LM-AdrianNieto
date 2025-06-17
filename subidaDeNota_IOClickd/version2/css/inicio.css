@@ -1,0 +1,255 @@
+/* IMPORTACIONES */
+
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dela+Gothic+One&family=Readex+Pro:wght@160..700&display=swap');
+
+:root {
+    --main-color-blue: #b3dae2;
+    --main-color-blue-opacity: #b3dae2be;
+    --main-color-blue-b: #4979fc;
+    --main-color-yellow: #ECED86;
+    --main-color-black: #0f0f0f;
+    --main-color-white: #e0e0e0;
+    --font-bold: "Dela Gothic One", sans-serif;
+    --font-header: "Readex Pro", sans-serif;
+    --font-text: "Bai Jamjuree", sans-serif;
+}
+
+@media (max-width: 1100px) {
+    body, html {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+    #productos {
+        display: flex !important;
+        flex-direction: column !important;
+        overflow-y: auto !important;
+        height: 100vh !important;
+        gap: 1rem !important; /* Optional spacing between items */
+    }
+
+    #principal,
+    .secundario {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 50vh !important;
+        position: relative !important;
+    }
+
+    .bg-image-mouse,
+    .bg-image-secundarios {
+        width: 100% !important;
+        height: 100% !important;
+        margin-left: 0 !important;
+        filter: blur(2px) !important;
+        background-position: center !important;
+        background-size: cover !important;
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+    .bg-text-mouse {
+        left: 0% !important;
+    }
+    .bg-text-mouse,
+    .bg-text-secundarios {
+        position: relative !important;
+        z-index: 1 !important;
+        background-color: var(--main-color-blue-opacity) !important;
+        border: 2px solid var(--main-color-blue) !important;
+        border-radius: 0.5rem !important;
+        padding: 1rem !important;
+        text-align: center !important;
+        width: 90% !important;
+        top: 0% !important;
+        transform: translateY(50%) !important;
+    }
+
+    .tituloPrincipal,
+    .tituloSecundario {
+        font-size: 1.5rem !important;
+        text-align: center !important;
+    }
+
+    #secundarios {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 1rem !important;
+    }
+}
+
+
+#logo {
+    padding: 0px !important;
+}
+
+/* EFECTO ARCOIRIS Y ESTILO DE LETRA */
+.tituloPrincipal, .tituloSecundario {
+    width: fit-content;
+    text-align: center;
+    font-size: 3rem;
+    font-family: var(--font-bold);
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    color: var(--main-color-black);
+    transition: all 200ms ease-in-out;
+    font-size: clamp(1em, 1.8vw, 3em);
+    z-index: 4;
+}
+
+.tituloPrincipal:hover, .tituloSecundario:hover {
+    text-shadow: 4px 2px 3px #b71c1c,
+                8px 4px 3px #e65100 ,
+                12px 6px 3px #f9a825,
+                16px 8px 3px #00695c,
+                20px 10px 3px #0d47a1,
+                24px 12px 3px #4a148c
+}
+
+#principal {
+    width: 100vw;
+    height: 70vh;
+    flex: 2;
+    min-height: 0;
+}
+
+.bg-image-mouse {
+    background-image: url("../img/bg-mouse.jpg");
+}
+
+.bg-image-keyboard {
+    background-image: url("../img/bg-keyboard.webp");
+}
+
+.bg-image-audio {
+    background-image: url("../img/bg-headset.webp");
+}
+
+.bg-image-screen {
+    background-image: url("../img/bg-screen.webp");
+}
+
+.bg-image-mousepad {
+    background-image: url("../img/bg-mousepad.jpg");
+}
+
+.bg-image,
+.bg-image-secundarios {
+    position: relative;
+    z-index: 0;
+}
+
+.bg-image::after,
+.bg-image-secundarios::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* darkness level: 0.4 = 40% black */
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bg-image-mouse {
+
+    /* Add the blur effect */
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+
+    /* Full height */
+    height: 100%;
+    margin-left: -5vw;
+    width: 110vw;
+    margin-top: -0.5vh;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text-mouse {
+    background-color: var(--main-color-blue-opacity); /* blue w/opacity/see-through */
+    border: 3px solid var(--main-color-blue);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -120%);
+    z-index: 0;
+    width: 25%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 0.4em;
+    min-width: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+#secundarios {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 26vh;
+    flex: 1;
+    min-height: 0;
+    max-height: 30vh; /* Optional limit */
+}
+
+.secundario-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.bg-image-secundarios {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;  /* No 110vw */
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+/* Text block on top of background */
+.bg-text-secundarios {
+    position: relative; /* Stack above background */
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color-blue-opacity);
+    border: 3px solid var(--main-color-blue);
+    padding: 20px;
+    text-align: center;
+    border-radius: 0.4em;
+    width: fit-content;
+    margin: auto; /* center inside wrapper */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.secundario {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+.section-link-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1; /* behind text visually, but pointer-events still happen */
+    cursor: pointer;
+    z-index: 2;
+}
