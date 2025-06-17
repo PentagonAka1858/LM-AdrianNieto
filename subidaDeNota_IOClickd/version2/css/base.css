@@ -18,6 +18,12 @@
     #menu {
         display: none !important;
     }
+    * {
+        font-size: 4vw !important;
+    }
+    .sidenav a, .sidenav h1{
+        font-size: 7vw !important;
+    }
 }
 
 /* Reset */
